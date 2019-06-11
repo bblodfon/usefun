@@ -1,10 +1,10 @@
 # usefun
 
-<!-- badges: start -->
-<!-- badges: end -->
-
-An R package for hosting functions that shouldn't be anywhere else since they
-are useful to many!
+A collection of useful functions that I have used in various projects and in 
+other R packages. They support some miscellaneous operations on data frames, 
+matrices and vectors, pretty printing of vector names and values in an R 
+notebook, quick saving of data to a file, making a multiple densities plot, 
+etc.
 
 ## Install
 

@@ -5,10 +5,10 @@ Version: 0.3.0
 Authors@R: person("John", "Zobolas", role = c("aut", "cph", "cre"), 
   email = "bblodfon@gmail.com", comment = c(ORCID = "0000-0002-3609-8674"))
 Description: A collection of useful functions that I have used in various 
-  projects and in other R packages. Support some miscellaneous operations on 
-  data frames and vectors, pretty printing of vector values and names in an R
-  notebook, quick saving of a matrix to file, making a multiple densities plot,
-  etc.
+  projects and in other R packages. They support some miscellaneous operations 
+  on data frames, matrices and vectors, pretty printing of vector names and 
+  values in an R notebook, quick saving of data to a file, making a multiple 
+  densities plot, etc.
 License: MIT + file LICENSE
 URL: https://github.com/bblodfon/usefun
 BugReports: https://github.com/bblodfon/usefun/issues
