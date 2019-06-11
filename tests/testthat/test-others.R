@@ -17,16 +17,16 @@ test_that("it returns proper results", {
   expect_equal(res.3, expected.res.3, tolerance = 0.0000001)
 })
 
-context("Testing 'specify.decimal'")
+context("Testing 'specify_decimal'")
 
 test_that("it returns proper results", {
-  expect_equal(specify.decimal(number = 0.12345, digits.to.keep = 6), "0.123450")
-  expect_equal(specify.decimal(number = 56.12345, digits.to.keep = 5), "56.12345")
-  expect_equal(specify.decimal(number = 0.12345, digits.to.keep = 4), "0.1234")
-  expect_equal(specify.decimal(number = 0.12345, digits.to.keep = 3), "0.123")
-  expect_equal(specify.decimal(number = 0.12345, digits.to.keep = 2), "0.12")
-  expect_equal(specify.decimal(number = 0.12345, digits.to.keep = 1), "0.1")
-  expect_equal(specify.decimal(number = 3.12345, digits.to.keep = 0), "3")
+  expect_equal(specify_decimal(number = 0.12345, digits.to.keep = 6), "0.123450")
+  expect_equal(specify_decimal(number = 56.12345, digits.to.keep = 5), "56.12345")
+  expect_equal(specify_decimal(number = 0.12345, digits.to.keep = 4), "0.1234")
+  expect_equal(specify_decimal(number = 0.12345, digits.to.keep = 3), "0.123")
+  expect_equal(specify_decimal(number = 0.12345, digits.to.keep = 2), "0.12")
+  expect_equal(specify_decimal(number = 0.12345, digits.to.keep = 1), "0.1")
+  expect_equal(specify_decimal(number = 3.12345, digits.to.keep = 0), "3")
 })
 
 context("Testing 'remove_commented_and_empty_lines'")

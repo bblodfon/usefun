@@ -66,7 +66,7 @@ make_color_bar_plot = function(color.vector, number.vector, title,
 #'
 #' @importFrom graphics legend lines plot
 #' @export
-# make_multiple_density_plot =
+make_multiple_density_plot =
   function(densities, legend.title, title, x.axis.label, legend.size = 1) {
     stopifnot(length(densities) <= 100)
 

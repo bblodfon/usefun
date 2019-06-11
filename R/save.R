@@ -38,6 +38,6 @@ save_df_to_file = function(df, file) {
 #' @param file string. The name of the file, can be a full path.
 #'
 #' @export
-save_df_to_file = function(mat, file) {
+save_mat_to_file = function(mat, file) {
   save_df_to_file(mat, file)
 }
