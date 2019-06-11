@@ -1,28 +1,32 @@
-#' Normalize vector
+#' Range normalization
 #'
-#' Normalize a vector of numeric values in a specified range.
+#' Normalize a vector, matrix or data.frame of numeric values in a specified
+#' range.
 #'
-#' @param vec vector with at least two different elements
+#' @param x vector, matrix or data.frame with at least two different elements
 #' @param range vector of two elements specifying the desired normalized range.
 #' Default value is c(0,1)
-#' @return the normalized vector
+#' @return the normalized data
 #'
 #' @examples
 #' vec = 1:10
-#' normalize_vector(vec)
-#' normalize_vector(vec, range = c(-1,1))
+#' normalize_to_range(vec)
+#' normalize_to_range(vec, range = c(-1,1))
+#'
+#' mat = matrix(c(0,2,1), ncol = 3, nrow = 4)
+#' normalize_to_range(mat, range = c(-5,5))
 #'
 #' @export
-normalize_vector = function(vec, range = c(0,1)) {
-  stopifnot(length(unique(vec)) >= 2)
+normalize_to_range = function(x, range = c(0,1)) {
+  stopifnot(length(unique(x)) >= 2)
 
-  vec.max = max(vec)
-  vec.min = min(vec)
+  x.max = max(x)
+  x.min = min(x)
 
   a = range[1]
   b = range[2]
 
-  res = a + (vec - vec.min)*(b-a)/(vec.max - vec.min)
+  res = a + (x - x.min)*(b-a)/(x.max - x.min)
   return(res)
 }
 

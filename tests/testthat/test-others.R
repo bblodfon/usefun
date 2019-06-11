@@ -1,20 +1,28 @@
-context("Testing 'normalize_vector'")
+context("Testing 'normalize_to_range'")
 
 test_that("it returns proper results", {
   vec = 1:10
+  mat = matrix(c(0,2,1), ncol = 3, nrow = 4)
 
-  res.1 = normalize_vector(vec)
+  res.1 = normalize_to_range(vec)
   expected.res.1 = seq(0, 1, 0.11111111)
 
-  res.2 = normalize_vector(vec, range = c(1,100))
+  res.2 = normalize_to_range(vec, range = c(1,100))
   expected.res.2 = c(1, 12, 23, 34, 45, 56, 67, 78, 89, 100)
 
-  res.3 = normalize_vector(vec, range = c(-1,1))
+  res.3 = normalize_to_range(vec, range = c(-1,1))
   expected.res.3 = seq(-1, 1, 0.22222222)
+
+  res.4 = normalize_to_range(mat)
+  expected.res.4 = matrix(c(0.0, 1.0, 0.5), ncol = 3, nrow = 4)
+
+  res.5 = normalize_to_range(as.data.frame(mat))
 
   expect_equal(res.1, expected.res.1, tolerance = 0.0000001)
   expect_equal(res.2, expected.res.2, tolerance = 0.0000001)
   expect_equal(res.3, expected.res.3, tolerance = 0.0000001)
+  expect_equal(res.4, expected.res.4, tolerance = 0.0000001)
+  expect_equal(res.5, as.data.frame(expected.res.4), tolerance = 0.0000001)
 })
 
 context("Testing 'specify_decimal'")
