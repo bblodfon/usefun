@@ -114,9 +114,8 @@ mat_equal = function(x, y) {
 
 #' Is object empty?
 #'
-#' A function to test whether an object is \strong{NULL, empty} or something
-#' similar :) It checks the length of the object, so it has different behaviour
-#' than \code{\link{is.null}}.
+#' A function to test whether an object is \strong{empty}. It checks the length
+#' of the object, so it has different behaviour than \code{\link{is.null}}.
 #'
 #' @param obj a general object
 #'
@@ -133,9 +132,7 @@ mat_equal = function(x, y) {
 #' is_empty(NaN)
 #'
 #' @export
-is_empty = function(obj) {
-  if (length(obj)) return(FALSE) else return(TRUE)
-}
+is_empty = function(obj) length(obj) == 0
 
 #' Outersect
 #'

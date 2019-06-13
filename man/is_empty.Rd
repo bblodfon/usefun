@@ -13,9 +13,8 @@ is_empty(obj)
 a logical specifying if the object is NULL or not.
 }
 \description{
-A function to test whether an object is \strong{NULL, empty} or something
-similar :) It checks the length of the object, so it has different behaviour
-than \code{\link{is.null}}.
+A function to test whether an object is \strong{empty}. It checks the length
+of the object, so it has different behaviour than \code{\link{is.null}}.
 }
 \examples{
 # TRUE
