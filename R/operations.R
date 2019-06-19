@@ -29,9 +29,8 @@
 get_common_names = function(vec1, vec2, vector.names.str = "nodes",
                             with.gt = TRUE) {
   common.names = intersect(names(vec1), names(vec2))
-  common.names.number = length(common.names)
 
-  if (common.names.number == 0) {
+  if (is_empty(common.names)) {
     str = paste0("No common ", vector.names.str)
     pretty_print_string(str, with.gt = with.gt)
     return(FALSE)
@@ -72,9 +71,8 @@ get_common_names = function(vec1, vec2, vector.names.str = "nodes",
 get_common_values = function(vec1, vec2, vector.values.str = "nodes",
                              with.gt = TRUE) {
   common.values = intersect(vec1, vec2)
-  common.values.number = length(common.values)
 
-  if (common.values.number == 0) {
+  if (is_empty(common.values)) {
     str = paste0("No common ", vector.values.str)
     pretty_print_string(str, with.gt = with.gt)
     return(NULL)
