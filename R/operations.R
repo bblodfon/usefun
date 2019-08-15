@@ -288,3 +288,26 @@ prune_and_reorder_vector = function(vec, filter.vec) {
 
   return(reordered.vec)
 }
+
+#' Get ternary class id
+#'
+#' Helper function that checks if a \emph{value} surpasses the given
+#' \emph{threshold} either positively, negatively or not at all and returns
+#' a value indicating in which class (i.e. interval) it belongs.
+#'
+#' @param value numeric
+#' @param threshold numeric
+#'
+#' @return an integer. There are 3 cases:
+#'   \itemize{
+#'     \item 1: when \eqn{value > threshold}
+#'     \item -1: when \eqn{value < -threshold}
+#'     \item 0: otherwise
+#'   }
+#'
+#' @export
+get_ternary_class_id = function(value, threshold) {
+  if (value > threshold) return(1) # active
+  if (value < -threshold) return(-1) # inhibited
+  return(0) # no biomarker
+}

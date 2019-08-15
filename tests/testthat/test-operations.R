@@ -211,3 +211,20 @@ test_that("it returns proper results", {
   res.3 = prune_and_reorder_vector(a, filter.vec)
   expect_true(length(res.3) == 0)
 })
+
+context("Testing 'get_ternary_class_id'")
+
+test_that("it returns proper results", {
+  expect_equal(get_ternary_class_id(value = -6, threshold = 5), -1)
+  expect_equal(get_ternary_class_id(value = -4, threshold = 5), 0)
+  expect_equal(get_ternary_class_id(value = 0, threshold = 5), 0)
+  expect_equal(get_ternary_class_id(value = 3, threshold = 5), 0)
+  expect_equal(get_ternary_class_id(value = 4, threshold = 5), 0)
+  expect_equal(get_ternary_class_id(value = 7, threshold = 5), 1)
+
+  expect_equal(get_ternary_class_id(value = 0.78, threshold = 0.77), 1)
+  expect_equal(get_ternary_class_id(value = 0.33, threshold = 0.77), 0)
+  expect_equal(get_ternary_class_id(value = -0.33, threshold = 0.77), 0)
+  expect_equal(get_ternary_class_id(value = -0.88, threshold = 0.77), -1)
+})
+
