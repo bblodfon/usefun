@@ -15,3 +15,7 @@
 - simplified `is_empty` function
 - renamed `normalize_vector` function to `normalize_to_range`
 - added new `get_ternary_class_id` function
+
+# usefun 0.3.4
+
+- added new `add_row_to_ternary_df` function
