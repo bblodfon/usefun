@@ -228,3 +228,26 @@ test_that("it returns proper results", {
   expect_equal(get_ternary_class_id(value = -0.88, threshold = 0.77), -1)
 })
 
+context("Testing 'add_row_to_ternary_df'")
+
+test_that("it returns proper results", {
+  df = data.frame(c(0,-1,0), c(0,1,-1), c(1,0,0), c(0,0,0))
+  colnames(df) = c("A","B","C","D")
+
+  df.1 = add_row_to_ternary_df(df, values.pos = c(), values.neg = c())
+  df.2 = add_row_to_ternary_df(df, values.pos = c(), values.neg = c(), pos = "first", row.name = "AAAA")
+  df.3 = add_row_to_ternary_df(df, values.pos = c(), values.neg = c(), pos = "last",  row.name = "NULL")
+  expect_equal(as.numeric(df.1[1,]), c(0,0,0,0))
+  expect_equal(rownames(df.1)[1], "1")
+  expect_equal(as.numeric(df.2[1,]), c(0,0,0,0))
+  expect_equal(rownames(df.2)[1], "AAAA")
+  expect_equal(as.numeric(df.3[4,]), c(0,0,0,0))
+  expect_equal(rownames(df.3)[4], "NULL")
+
+  df.4 = add_row_to_ternary_df(df, values.pos = c("A","B"), values.neg = c("C","D"))
+  expect_equal(as.numeric(df.4[1,]), c(1,1,-1,-1))
+
+  # values.pos %in% col.names
+  expect_error(add_row_to_ternary_df(df, values.pos = c("no","yes"), values.neg = c("C","D")))
+})
+

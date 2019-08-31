@@ -311,3 +311,60 @@ get_ternary_class_id = function(value, threshold) {
   if (value < -threshold) return(-1) # inhibited
   return(0) # no biomarker
 }
+
+#' Add a row to a 3-valued (ternary) \code{data.frame}
+#'
+#' Use this function on a \code{data.frame} object (with values only
+#' in the 3-element set \{-1,0,1\} ideally - specifying either a positive,
+#' negative or none/absent condition/state/result about something) and add an
+#' extra \strong{first or last row vector} with zero values, where \emph{1}
+#' and \emph{-1} will be filled when the column names of the given
+#' \code{data.frame} match the values in the \emph{values.pos} or
+#' \emph{values.neg} vector parameters respectively.
+#'
+#' @param df a \code{data.frame} object with values only in the
+#' the 3-element set \{-1,0,1\}. The column names should be node names
+#' (gene, protein names, etc.).
+#' @param values.pos a character vector whose elements are indicators of a
+#' positive state/condition and will be assigned a value of \emph{1}.
+#' These elements \strong{must be a subset of the column names} of the given \code{df} parameter.
+#' @param values.neg a character vector whose elements are indicators of a
+#' negative state/condition and will be assigned a value of \emph{-1}.
+#' These elements \strong{must be a subset of the column names} of the given \code{df} parameter.
+#' @param pos string. The position where we should put the new row that will be generated.
+#' Two possible values: "first" (default) or "last".
+#' @param row.name string. The name of the new row that we will added. Default
+#' value: NULL.
+#'
+#' @return the \code{df} with one extra row, having elements from the \{-1,0,1\}
+#' set depending on values of \code{values.pos} and \code{values.neg} vectors.
+#'
+#' @examples
+#' df = data.frame(c(0,-1,0), c(0,1,-1), c(1,0,0))
+#' colnames(df) = c("A","B","C")
+#' df.new = add_row_to_ternary_df(df, values.pos = c("A"), values.neg = c("C"), row.name = "Hello!")
+#'
+#' @export
+add_row_to_ternary_df =
+  function(df, values.pos, values.neg, pos = "first", row.name = NULL) {
+    # some checks
+    stopifnot(pos %in% c("first", "last"))
+    col.names = colnames(df)
+    stopifnot(values.pos %in% col.names, values.neg %in% col.names)
+
+    # initialize a 'row' data.frame
+    row = as.data.frame(matrix(0, ncol = length(col.names), nrow = 1))
+    colnames(row) = col.names
+    rownames(row) = row.name
+
+    # add 'positive' and 'negative' meta-values
+    row[colnames(row) %in% values.pos] = 1
+    row[colnames(row) %in% values.neg] = -1
+
+    if (pos == 'first')
+      res = rbind(row, df)
+    else
+      res = rbind(df, row)
+
+    return(res)
+  }
