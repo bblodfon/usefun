@@ -14,10 +14,12 @@ the 3-element set \{-1,0,1\}. The column names should be node names
 
 \item{values.pos}{a character vector whose elements are indicators of a
 positive state/condition and will be assigned a value of \emph{1}.
-These elements \strong{must be a subset of the column names} of the given \code{df} parameter.}
+These elements \strong{must be a subset of the column names} of the given \code{df} parameter.
+If empty, no values equal to \emph{1} will be added to the new row.}
 
 \item{values.neg}{a character vector whose elements are indicators of a
 negative state/condition and will be assigned a value of \emph{-1}.
+If empty, no values equal to \emph{-1} will be added to the new row.
 These elements \strong{must be a subset of the column names} of the given \code{df} parameter.}
 
 \item{pos}{string. The position where we should put the new row that will be generated.

@@ -247,6 +247,9 @@ test_that("it returns proper results", {
   df.4 = add_row_to_ternary_df(df, values.pos = c("A","B"), values.neg = c("C","D"))
   expect_equal(as.numeric(df.4[1,]), c(1,1,-1,-1))
 
+  df.5 = add_row_to_ternary_df(df, values.pos = c("A"), values.neg = c())
+  expect_equal(as.numeric(df.5[1,]), c(1,0,0,0))
+
   # values.pos %in% col.names
   expect_error(add_row_to_ternary_df(df, values.pos = c("no","yes"), values.neg = c("C","D")))
 })
