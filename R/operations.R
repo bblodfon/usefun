@@ -370,3 +370,61 @@ add_row_to_ternary_df =
 
     return(res)
   }
+
+#' Rearrange a list of data frames by rownames
+#'
+#' @param list_df a (non-empty) list of \code{data.frame} objects. The data
+#' frames must have the same \code{colnames} attribute.
+#'
+#' @return a rearranged list of data frames, where the names of the elements of
+#' the \code{list_df} (the 'ids' of the data frames) and the \code{rownames} of
+#' the data frames have switched places: the unique row names of the original list's
+#' combined data frames serve as \code{names} for the returned list of data
+#' frames, while the data frame 'ids' (\code{names} of the original list's
+#' elements) now serve as \code{rownames} for the data frames in the new list.
+#'
+#' E.g. if in the given \code{list} there was a \code{data.frame} with id 'A':
+#' \code{a = list_df[["A"]]} and \code{rownames(a) = c("row1", "row2")}, then
+#' in the rearranged \code{list} there would be two data frames with ids
+#' "row1" and "row2", each of them having a row with name "A" where also these
+#' data rows would be the same as before: \code{list_df[["A"]]["row1", ] == returned_list[["row1"]]["A",]}
+#' and \code{list_df[["A"]]["row2", ] == returned_list[["row2"]]["A",]} respectively.
+#'
+#' @examples
+#' df.1 = data.frame(matrix(data = 0, nrow = 3, ncol = 3,
+#'   dimnames = list(c("row1", "row2", "row3"), c("C.1", "C.2", "C.3"))))
+#' df.2 = data.frame(matrix(data = 1, nrow = 3, ncol = 3,
+#'   dimnames = list(c("row1", "row2", "row4"), c("C.1", "C.2", "C.3"))))
+#' list_df = list(df.1, df.2)
+#' names(list_df) = c("zeros", "ones")
+#' res_list_df = ldf_arrange_by_rownames(list_df)
+#'
+#' @export
+ldf_arrange_by_rownames = function(list_df) {
+  # some checks
+  stopifnot(is.list(list_df), length(list_df) > 0)
+  stopifnot(all(sapply(list_df, function(df) { is.data.frame(df) })))
+  column_names_mat = sapply(list_df, function(df) { colnames(df) })
+  stopifnot(all(duplicated(column_names_mat, MARGIN = 2)[-1])) # same column names
+
+  column_names = colnames(list_df[[1]])
+  unique_row_names = unique(unlist(sapply(list_df, function(df) { rownames(df) })))
+
+  # initialize `res` list
+  res = list()
+  for (row_name in unique_row_names) {
+    df = as.data.frame(matrix(data = NA, nrow = 0, ncol = length(column_names)))
+    colnames(df) = column_names
+    res[[row_name]] = df
+  }
+
+  # fill in `res` list
+  for (df_name in names(list_df)) {
+    df = list_df[[df_name]]
+    for (row_name in rownames(df)) {
+      res[[row_name]][df_name,] = df[row_name, ]
+    }
+  }
+
+  return(res)
+}

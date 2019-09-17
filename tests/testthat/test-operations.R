@@ -254,3 +254,23 @@ test_that("it returns proper results", {
   expect_error(add_row_to_ternary_df(df, values.pos = c("no","yes"), values.neg = c("C","D")))
 })
 
+context("Testing 'ldf_arrange_by_rownames'")
+
+test_that("it returns proper results", {
+  df.1 = data.frame(matrix(data = 0, nrow = 3, ncol = 3, dimnames =
+                             list(c("row1", "row2", "row3"), c("C.1", "C.2", "C.3"))))
+  df.2 = data.frame(matrix(data = 1, nrow = 3, ncol = 3, dimnames =
+                             list(c("row1", "row2", "row4"), c("C.1", "C.2", "C.3"))))
+
+  list_df = list(df.1, df.2)
+  names(list_df) = c("zeros", "ones")
+
+  res_list_df = ldf_arrange_by_rownames(list_df)
+
+  expect_equal(length(res_list_df), 4)
+  expect_equal(names(res_list_df), c("row1", "row2", "row3", "row4"))
+  expect_equal(as.numeric(res_list_df[["row1"]]["zeros", ]),
+               as.numeric(list_df[["zeros"]]["row1", ]))
+  expect_equal(as.numeric(res_list_df[["row2"]]["ones", ]),
+               as.numeric(list_df[["ones"]]["row2", ]))
+})
