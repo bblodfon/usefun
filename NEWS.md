@@ -1,3 +1,7 @@
+# usefun 0.4.0
+
+- Added function `ldf_arrange_by_rownames` to rearrange a list of data frames
+
 # usefun 0.3.5
 
 - refined test for `add_row_to_ternary_df`: it can be used also for 
