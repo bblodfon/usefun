@@ -123,12 +123,15 @@ test_that("it returns proper results", {
 context("Testing 'outersect'")
 
 test_that("it returns proper results", {
-  x = 1:10
-  y = 2:11
-  z = 1:10
+  x = 1:3
+  y = 2:5
+  w = 1
 
-  expect_equal(outersect(x,y), c(1,11))
-  expect_length(outersect(x,z), 0) # or is_empty = TRUE
+  expect_equal(outersect(x,y), c(1,4,5))
+  expect_equal(outersect(x,w), c(2,3))
+  expect_equal(outersect(y,w), c(1,2,3,4,5))
+  expect_length(outersect(x,x), 0) # or is_empty = TRUE
+  expect_length(outersect(w,w), 0)
 })
 
 context("Testing 'is_between'")
