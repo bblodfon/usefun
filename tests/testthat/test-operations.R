@@ -88,16 +88,21 @@ test_that("it returns proper results", {
   h = c(1, 2, 333, 222)
   k = c(2, 333, 222, 1)
 
-  res.1 = get_percentage_of_matches(a, a)
-  res.2 = get_percentage_of_matches(a, b)
-  res.3 = get_percentage_of_matches(a, c)
-  res.4 = get_percentage_of_matches(a, d)
-  res.5 = get_percentage_of_matches(a, e)
-  res.6 = get_percentage_of_matches(f, g)
-  res.7 = get_percentage_of_matches(f, h)
-  res.8 = get_percentage_of_matches(h ,k)
+  res.1 = get_percentage_of_matches(a,a)
+  res.2 = get_percentage_of_matches(a,b)
+  res.3 = get_percentage_of_matches(a,c)
+  res.4 = get_percentage_of_matches(a,d)
+  res.5 = get_percentage_of_matches(a,e)
+  res.6 = get_percentage_of_matches(f,g)
+  res.7 = get_percentage_of_matches(f,h)
+  res.8 = get_percentage_of_matches(h,k)
 
-  res = c(res.1, res.2, res.3, res.4, res.5, res.6, res.7, res.8)
+  a[4] = NA
+  a[3] = NaN
+  res.9 = get_percentage_of_matches(a,b)
+  res.10 = get_percentage_of_matches(a,a)
+
+  res = c(res.1, res.2, res.3, res.4, res.5, res.6, res.7, res.8, res.9, res.10)
 
   expected.res.1 = 1
   expected.res.2 = 0.75
@@ -107,10 +112,13 @@ test_that("it returns proper results", {
   expected.res.6 = 0.25
   expected.res.7 = 0.5
   expected.res.8 = 0
+  expected.res.9 = 0.25
+  expected.res.10 = 0.5
 
   expected.res = c(expected.res.1, expected.res.2, expected.res.3,
                    expected.res.4, expected.res.5, expected.res.6,
-                   expected.res.7, expected.res.8)
+                   expected.res.7, expected.res.8, expected.res.9,
+                   expected.res.10)
 
   expect_equal(res, expected.res)
 })

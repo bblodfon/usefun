@@ -14,7 +14,8 @@ get_percentage_of_matches(vec1, vec2)
 \value{
 the percentage of common values (exact matches) between the two
 vectors. Can only be a value between 0 (no common elements) and 1 (perfect
-element match).
+element match). Note that \emph{NaN} and \emph{NA} values are allowed in
+the input vectors, but they will always count as a mismatch.
 }
 \description{
 Use this function on two numeric vectors with the same \code{names} attribute

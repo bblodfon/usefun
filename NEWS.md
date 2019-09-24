@@ -1,3 +1,7 @@
+# usefun 0.4.1
+
+- Improved `get_percentage_of_matches` handling of NA and NaN values
+
 # usefun 0.4.0
 
 - Added function `ldf_arrange_by_rownames` to rearrange a list of data frames

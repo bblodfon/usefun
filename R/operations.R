@@ -156,7 +156,8 @@ get_average_over_unique_values = function(vec1, vec2) {
 #'
 #' @return the percentage of common values (exact matches) between the two
 #' vectors. Can only be a value between 0 (no common elements) and 1 (perfect
-#' element match).
+#' element match). Note that \emph{NaN} and \emph{NA} values are allowed in
+#' the input vectors, but they will always count as a mismatch.
 #'
 #' @examples
 #' vec1 = c(1, 2, 3, 2)
@@ -178,7 +179,7 @@ get_percentage_of_matches = function(vec1, vec2) {
 
   total = length(vec1)
   diff = vec1 - vec2
-  matches = sum(diff == 0)
+  matches = sum(diff == 0, na.rm = TRUE)
   matches.percentage = matches / total
 
   return(matches.percentage)
