@@ -19,7 +19,7 @@ colors.100 = c("#000000", "#0089A3", "#1CE6FF", "#FF34FF", "#FF4A46", "#008941",
 
 #' Make a color bar plot
 #'
-#' Use this function when you want to visualise some numbers and their
+#' Use this function when you want to visualize some numbers and their
 #' respective color values. Note that more than 42 colors won't be nice
 #' to see (too thin bars)!
 #'

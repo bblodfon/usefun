@@ -67,7 +67,7 @@ print_empty_line = function(html.output = FALSE) {
 #' @param vector.names.str string. It tell us what are the names of the
 #' vector (use plural form) in order to fill the print message. Default value:
 #' "nodes".
-#' @param sep string. The seperator character to use to distinguish between
+#' @param sep string. The separator character to use to distinguish between
 #' the names values. Default value: ", ".
 #' @param with.gt logical. Determines if the ">" sign will be appended for nice
 #' printing in an R notebook. Default value: TRUE.
@@ -91,7 +91,7 @@ pretty_print_vector_names = function(vec, vector.names.str = "nodes",
 #' @param vector.values.str string. It tell us what are the values of the
 #' vector (use plural form) in order to fill the print message. Default value:
 #' "nodes".
-#' @param sep string. The seperator character to use to distinguish between
+#' @param sep string. The separator character to use to distinguish between
 #' the vector values. Default value: ", ".
 #' @param with.gt logical. Determines if the ">" sign will be appended for nice
 #' printing in an R notebook. Default value: TRUE.

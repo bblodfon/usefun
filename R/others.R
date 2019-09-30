@@ -136,7 +136,7 @@ is_empty = function(obj) length(obj) == 0
 
 #' Outersect
 #'
-#' Performs set outersection on two vectors. The opposite operation from
+#' Performs set \emph{outersection} on two vectors. The opposite operation from
 #' \code{intersect}!
 #'
 #' @param x,y vectors

@@ -14,7 +14,7 @@ pretty_print_vector_names(vec, vector.names.str = "nodes", sep = ", ",
 vector (use plural form) in order to fill the print message. Default value:
 "nodes".}
 
-\item{sep}{string. The seperator character to use to distinguish between
+\item{sep}{string. The separator character to use to distinguish between
 the names values. Default value: ", ".}
 
 \item{with.gt}{logical. Determines if the ">" sign will be appended for nice

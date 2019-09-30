@@ -13,7 +13,7 @@ outersect(x, y)
 a vector of the non-common elements of x and y.
 }
 \description{
-Performs set outersection on two vectors. The opposite operation from
+Performs set \emph{outersection} on two vectors. The opposite operation from
 \code{intersect}!
 }
 \examples{

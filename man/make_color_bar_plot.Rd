@@ -18,7 +18,7 @@ make_color_bar_plot(color.vector, number.vector, title,
 \item{x.axis.label}{string. The x-axis label. Default value: empty string}
 }
 \description{
-Use this function when you want to visualise some numbers and their
+Use this function when you want to visualize some numbers and their
 respective color values. Note that more than 42 colors won't be nice
 to see (too thin bars)!
 }
