@@ -16,3 +16,8 @@ etc.
 ```
 devtools::install_github("bblodfon/usefun")
 ```
+## Examples
+
+Most of the functions from this package have examples in the documentation
+and have been used in this [biomarker analysis](https://bblodfon.github.io/gitsbe-model-analysis/atopo/cell-lines-2500/),
+which also acts as a vignette for this package.
