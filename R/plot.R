@@ -93,9 +93,11 @@ make_multiple_density_plot =
 #' @param plot.string string. The plot string expression.
 #'
 #' @examples
-#' x = 1:10
-#' y = 1:10
-#' plot_string_to_file("my_file.pdf", "pdf", "plot(x,y)")
+#' \dontrun{
+#'   x = 1:10
+#'   y = 1:10
+#'   plot_string_to_file("my_file.pdf", "pdf", "plot(x,y)")
+#' }
 #'
 #' @importFrom grDevices dev.off pdf png svg tiff
 #' @export
