@@ -20,10 +20,9 @@ Execute a plot string expression and output the result to the specified
 file format.
 }
 \examples{
-\dontrun{
-  x = 1:10
-  y = 1:10
-  plot_string_to_file("my_file.pdf", "pdf", "plot(x,y)")
-}
+
+x = 1:10
+y = 1:10
+plot_string_to_file(paste0(tempdir(), "/my_file.pdf"), "pdf", "plot(x,y)")
 
 }
