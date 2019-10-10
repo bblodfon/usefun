@@ -10,7 +10,7 @@ specify_decimal(number, digits.to.keep)
 \item{number}{numeric}
 
 \item{digits.to.keep}{numeric. Refers to the digits to keep after decimal
-point '.'}
+point '.'. This value should be 15 or less.}
 }
 \value{
 the pruned number in string format

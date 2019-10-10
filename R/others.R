@@ -37,7 +37,7 @@ normalize_to_range = function(x, range = c(0,1)) {
 #'
 #' @param number numeric
 #' @param digits.to.keep numeric. Refers to the digits to keep after decimal
-#' point '.'
+#' point '.'. This value should be 15 or less.
 #'
 #' @return the pruned number in string format
 #'
@@ -47,6 +47,7 @@ normalize_to_range = function(x, range = c(0,1)) {
 #'
 #' @export
 specify_decimal = function(number, digits.to.keep) {
+  stopifnot(digits.to.keep <= 15)
   trimws(format(round(number, digits.to.keep), nsmall = digits.to.keep))
 }
 
