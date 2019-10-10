@@ -32,5 +32,5 @@ Imports:
     stats,
     utils
 Suggests:
-    testthat (>= 2.1.0),
-    covr (>= 3.2.1)
+    testthat,
+    covr
