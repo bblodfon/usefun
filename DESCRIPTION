@@ -12,7 +12,7 @@ Description: A set of general functions that I have used in various
   that contain only one specific value given by the user, checking for matrix equality,
   pruning and reordering a vector according to the common elements between its 
   names and elements of another given vector, finding the non-common elements 
-  between two vectors (outersection), 
+  between two vectors (outer-section), 
   normalization of a vector, matrix or data.frame's numeric values in a specified range, 
   pretty printing of vector names and values in an R notebook (common names and 
   values between two vectors also supported), retrieving the parent directory of 
