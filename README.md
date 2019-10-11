@@ -1,8 +1,10 @@
 # usefun
 
 <!-- badges: start -->
-  [![Travis build status](https://travis-ci.org/bblodfon/usefun.svg?branch=master)](https://travis-ci.org/bblodfon/usefun)
-  [![codecov](https://codecov.io/gh/bblodfon/usefun/branch/master/graph/badge.svg)](https://codecov.io/gh/bblodfon/usefun)
+[![Travis build status](https://travis-ci.org/bblodfon/usefun.svg?branch=master)](https://travis-ci.org/bblodfon/usefun)
+[![codecov](https://codecov.io/gh/bblodfon/usefun/branch/master/graph/badge.svg)](https://codecov.io/gh/bblodfon/usefun)
+[![CRAN status](https://www.r-pkg.org/badges/version/usefun)](https://cran.r-project.org/package=usefun)
+[![Downloads](https://cranlogs.r-pkg.org/badges/usefun)](https://cran.r-project.org/package=usefun)
 <!-- badges: end -->
 
 A set of general functions that I have used in various 
@@ -24,6 +26,12 @@ string expression while generating the result to the specified file format.
 
 ## Install
 
+CRAN version:
+```
+install.packages("usefun")
+```
+
+Development version:
 ```
 devtools::install_github("bblodfon/usefun")
 ```
