@@ -1,3 +1,7 @@
+# usefun 0.4.2
+
+- Added better documentation for the `pretty_print*` functions
+
 # usefun 0.4.1
 
 - Improved `get_percentage_of_matches` handling of NA and NaN values
