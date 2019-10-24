@@ -10,7 +10,8 @@ pretty_print_string(string, with.gt = TRUE)
 \item{string}{a string}
 
 \item{with.gt}{logical. Determines if the ">" sign will be appended for nice
-printing in an R notebook. Default value: TRUE.}
+printing in an R notebook (use with the chuck option \emph{results = 'asis'}).
+Default value: TRUE.}
 }
 \description{
 Nice printing of a string in an R notebook (default behaviour). Otherwise,

@@ -5,7 +5,8 @@
 #'
 #' @param string a string
 #' @param with.gt logical. Determines if the ">" sign will be appended for nice
-#' printing in an R notebook. Default value: TRUE.
+#' printing in an R notebook (use with the chuck option \emph{results = 'asis'}).
+#' Default value: TRUE.
 #'
 #' @seealso \code{\link{cat}}
 #'
@@ -25,7 +26,7 @@ pretty_print_string = function(string, with.gt = TRUE) {
 #'
 #' @param string a string
 #' @param with.gt logical. Determines if the ">" sign will be appended for nice
-#' printing in an R notebook. Default value: TRUE.
+#' printing in an R notebook. (use with the chuck option \emph{results = 'asis'}). Default value: TRUE.
 #' @param html.output logical. If TRUE, it encapsulates the string with the bold
 #' tags for an HTML document. Default value: TRUE.
 #'
@@ -70,7 +71,8 @@ print_empty_line = function(html.output = FALSE) {
 #' @param sep string. The separator character to use to distinguish between
 #' the names values. Default value: ", ".
 #' @param with.gt logical. Determines if the ">" sign will be appended for nice
-#' printing in an R notebook. Default value: TRUE.
+#' printing in an R notebook (use with the chuck option \emph{results = 'asis'}).
+#' Default value: TRUE.
 #'
 #' @seealso \code{\link{pretty_print_string}}
 #'
@@ -94,7 +96,8 @@ pretty_print_vector_names = function(vec, vector.names.str = "nodes",
 #' @param sep string. The separator character to use to distinguish between
 #' the vector values. Default value: ", ".
 #' @param with.gt logical. Determines if the ">" sign will be appended for nice
-#' printing in an R notebook. Default value: TRUE.
+#' printing in an R notebook (use with the chuck option \emph{results = 'asis'}).
+#' Default value: TRUE.
 #'
 #' @seealso \code{\link{pretty_print_string}}
 #'
@@ -113,6 +116,8 @@ pretty_print_vector_values = function(vec, vector.values.str = "nodes",
 #'
 #' It outputs a vector's names and values in this format: \emph{name1: value1,
 #' name2: value2,...}. You can choose how many elements to show in this format.
+#' Use with the chuck option \emph{results = 'asis'} to get a nice printing in
+#' an R notebook.
 #'
 #' @param vec vector with \code{names} attribute
 #' @param n the number of elements that you want to print in a nice way. Default
@@ -159,7 +164,8 @@ pretty_print_vector_names_and_values = function(vec, n = -1) {
 #' @param name string
 #' @param value string
 #' @param with.gt logical. Determines if the ">" sign will be appended for nice
-#' printing in an R notebook. Default value: FALSE.
+#' printing in an R notebook (use with the chuck option \emph{results = 'asis'}).
+#' Default value: FALSE.
 #' @param with.comma logical. Determines if the comma (,) character will be
 #' appended to the end of the output. Default value: TRUE.
 #'

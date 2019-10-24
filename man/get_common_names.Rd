@@ -16,7 +16,8 @@ get_common_names(vec1, vec2, vector.names.str = "nodes",
 \code{names} of the two vectors (use plural form). Default value: "nodes".}
 
 \item{with.gt}{logical. Determines if the ">" sign will be appended for nice
-printing in an R notebook. Default value: TRUE.}
+printing in an R notebook (use with the chuck option \emph{results = 'asis'}).
+Default value: TRUE.}
 }
 \value{
 the character vector of the common names. If there is only one name

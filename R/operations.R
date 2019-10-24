@@ -8,7 +8,8 @@
 #' @param vector.names.str string. Used for printing, it tell us what are the
 #' \code{names} of the two vectors (use plural form). Default value: "nodes".
 #' @param with.gt logical. Determines if the ">" sign will be appended for nice
-#' printing in an R notebook. Default value: TRUE.
+#' printing in an R notebook (use with the chuck option \emph{results = 'asis'}).
+#' Default value: TRUE.
 #'
 #' @return the character vector of the common names. If there is only one name
 #' in common, the \code{vector.names.str} gets the last character stripped for
@@ -52,7 +53,8 @@ get_common_names = function(vec1, vec2, vector.names.str = "nodes",
 #' @param vector.values.str string. Used for printing, it tell us what are the
 #' values of the two vectors (use plural form). Default value: "nodes".
 #' @param with.gt logical. Determines if the ">" sign will be appended for nice
-#' printing in an R notebook. Default value: TRUE.
+#' printing in an R notebook (use with the chuck option \emph{results = 'asis'}).
+#' Default value: TRUE.
 #'
 #' @return the vector of the common values. If there is only one value
 #' in common, the \code{vector.values.str} gets the last character stripped for

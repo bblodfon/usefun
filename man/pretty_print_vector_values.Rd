@@ -18,7 +18,8 @@ vector (use plural form) in order to fill the print message. Default value:
 the vector values. Default value: ", ".}
 
 \item{with.gt}{logical. Determines if the ">" sign will be appended for nice
-printing in an R notebook. Default value: TRUE.}
+printing in an R notebook (use with the chuck option \emph{results = 'asis'}).
+Default value: TRUE.}
 }
 \description{
 Pretty printing of a vector's values

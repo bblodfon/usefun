@@ -16,6 +16,8 @@ printed.}
 \description{
 It outputs a vector's names and values in this format: \emph{name1: value1,
 name2: value2,...}. You can choose how many elements to show in this format.
+Use with the chuck option \emph{results = 'asis'} to get a nice printing in
+an R notebook.
 }
 \seealso{
 \code{\link{pretty_print_name_and_value}}

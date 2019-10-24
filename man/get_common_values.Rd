@@ -16,7 +16,8 @@ get_common_values(vec1, vec2, vector.values.str = "nodes",
 values of the two vectors (use plural form). Default value: "nodes".}
 
 \item{with.gt}{logical. Determines if the ">" sign will be appended for nice
-printing in an R notebook. Default value: TRUE.}
+printing in an R notebook (use with the chuck option \emph{results = 'asis'}).
+Default value: TRUE.}
 }
 \value{
 the vector of the common values. If there is only one value
