@@ -1,3 +1,7 @@
+# usefun 0.4.3
+
+- Added function `binarize_to_thres` for converting a matrix to a binary one based on a given threshold      
+
 # usefun 0.4.2
 
 - Added better documentation for the `pretty_print*` functions
