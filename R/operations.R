@@ -431,3 +431,27 @@ ldf_arrange_by_rownames = function(list_df) {
 
   return(res)
 }
+
+#' Binarize matrix to given threshold
+#'
+#' Simple function that checks every element of a given matrix (or data.frame)
+#' if it surpasses the given threshold either positively or negatively and it
+#' outputs 1 for that element otherwise 0.
+#'
+#' @param mat a matrix or data.frame object
+#' @param thres a positive numerical value
+#'
+#' @examples
+#'
+#' mat = matrix(data = -4:4, nrow = 3, ncol = 3)
+#' binarize.to.thres(mat, thres = 0.5)
+#' binarize.to.thres(mat, thres = 2.5)
+#'
+#' @export
+binarize.to.thres = function(mat, thres) {
+  stopifnot(is.data.frame(mat) | is.matrix(mat))
+  stopifnot(thres > 0)
+  apply(mat, c(1,2), function(x) {
+    if (x >= thres | x <= -thres) 1 else 0
+  })
+}
