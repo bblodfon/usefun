@@ -436,10 +436,14 @@ ldf_arrange_by_rownames = function(list_df) {
 #'
 #' Simple function that checks every element of a given matrix (or data.frame)
 #' if it surpasses the given threshold either positively or negatively and it
-#' outputs 1 for that element otherwise 0.
+#' outputs 1 for that element, otherwise 0.
 #'
 #' @param mat a matrix or data.frame object
 #' @param thres a positive numerical value
+#'
+#' @return a binarized matrix (values either 0 or 1): elements that have 1
+#' correspond to values of \code{mat} that they were either larger than the
+#' threshold or smaller than it's negative.
 #'
 #' @examples
 #'
