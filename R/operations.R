@@ -85,7 +85,7 @@ get_common_values = function(vec1, vec2, vector.values.str = "nodes",
   }
 }
 
-#' Get average over unique values
+#' Get stats for unique values
 #'
 #' Use this function on two vectors with same \code{names} attribute (column
 #' names), to find for each unique (numeric) value of the first vector, the
@@ -95,8 +95,8 @@ get_common_values = function(vec1, vec2, vector.values.str = "nodes",
 #' @param vec1 vector with \code{names} attribute
 #' @param vec2 vector with \code{names} attribute
 #'
-#' @return A \code{matrix} consisting of 3 column vectors. The matrix size is
-#' \code{dim(matrix)= 3xn}, where n is the number of unique values of \code{vec1}).
+#' @return A \code{data.frame} consisting of 3 column vectors. The \code{data.frame}
+#' size is \code{nx3}, where n is the number of unique values of \code{vec1} (rows).
 #' The columns vectors are:
 #'   \enumerate{
 #'     \item the first input vector pruned to its unique values
@@ -113,11 +113,11 @@ get_common_values = function(vec1, vec2, vector.values.str = "nodes",
 #' names(vec1) = names.vec
 #' names(vec2) = names.vec
 #'
-#' res = get_average_over_unique_values(vec1, vec2)
+#' res = get_stats_for_unique_values(vec1, vec2)
 #'
 #' @importFrom stats sd
 #' @export
-get_average_over_unique_values = function(vec1, vec2) {
+get_stats_for_unique_values = function(vec1, vec2) {
   stopifnot(names(vec1) == names(vec2))
 
   vec1.sorted = sort(vec1)
@@ -143,7 +143,7 @@ get_average_over_unique_values = function(vec1, vec2) {
   res = cbind(vec1.sorted.unique, vec2.avg.values, sd.values)
   colnames(res) = c("vec1.unique", "vec2.mean", "vec2.sd")
 
-  return(res)
+  return(as.data.frame(res))
 }
 
 #' Get percentage of matches between two vectors
