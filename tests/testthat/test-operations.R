@@ -283,7 +283,7 @@ test_that("it returns proper results", {
                as.numeric(list_df[["ones"]]["row2", ]))
 })
 
-context("Testing 'binarize.to.thres'")
+context("Testing 'binarize_to_thres'")
 
 test_that("it returns proper results", {
   mat = matrix(data = -4:4, nrow = 3, ncol = 3)
@@ -294,9 +294,9 @@ test_that("it returns proper results", {
   expected.mat.4 = matrix(data = c(1,0,0,0,0,0,0,0,1), nrow = 3, ncol = 3)
   expected.mat.5 = matrix(data = 0, nrow = 3, ncol = 3)
 
-  expect_equal(binarize.to.thres(mat, thres = 0.5), expected.mat.1)
-  expect_equal(binarize.to.thres(mat, thres = 1.5), expected.mat.2)
-  expect_equal(binarize.to.thres(mat, thres = 2.5), expected.mat.3)
-  expect_equal(binarize.to.thres(mat, thres = 3.5), expected.mat.4)
-  expect_equal(binarize.to.thres(mat, thres = 5), expected.mat.5)
+  expect_equal(binarize_to_thres(mat, thres = 0.5), expected.mat.1)
+  expect_equal(binarize_to_thres(mat, thres = 1.5), expected.mat.2)
+  expect_equal(binarize_to_thres(mat, thres = 2.5), expected.mat.3)
+  expect_equal(binarize_to_thres(mat, thres = 3.5), expected.mat.4)
+  expect_equal(binarize_to_thres(mat, thres = 5), expected.mat.5)
 })

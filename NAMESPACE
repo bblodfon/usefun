@@ -2,7 +2,7 @@
 
 export(add_row_to_ternary_df)
 export(add_vector_to_df)
-export(binarize.to.thres)
+export(binarize_to_thres)
 export(get_average_over_unique_values)
 export(get_common_names)
 export(get_common_values)

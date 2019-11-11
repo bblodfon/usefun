@@ -448,11 +448,11 @@ ldf_arrange_by_rownames = function(list_df) {
 #' @examples
 #'
 #' mat = matrix(data = -4:4, nrow = 3, ncol = 3)
-#' binarize.to.thres(mat, thres = 0.5)
-#' binarize.to.thres(mat, thres = 2.5)
+#' binarize_to_thres(mat, thres = 0.5)
+#' binarize_to_thres(mat, thres = 2.5)
 #'
 #' @export
-binarize.to.thres = function(mat, thres) {
+binarize_to_thres = function(mat, thres) {
   stopifnot(is.data.frame(mat) | is.matrix(mat))
   stopifnot(thres > 0)
   apply(mat, c(1,2), function(x) {
