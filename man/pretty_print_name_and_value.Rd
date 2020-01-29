@@ -4,8 +4,7 @@
 \alias{pretty_print_name_and_value}
 \title{Pretty print a name and value}
 \usage{
-pretty_print_name_and_value(name, value, with.gt = FALSE,
-  with.comma = TRUE)
+pretty_print_name_and_value(name, value, with.gt = FALSE, with.comma = TRUE)
 }
 \arguments{
 \item{name}{string}

@@ -3,7 +3,6 @@
 \docType{package}
 \name{usefun}
 \alias{usefun}
-\alias{usefun-package}
 \title{usefun}
 \description{
 A collection of useful functions by John

@@ -4,8 +4,13 @@
 \alias{add_row_to_ternary_df}
 \title{Add a row to a 3-valued (ternary) \code{data.frame}}
 \usage{
-add_row_to_ternary_df(df, values.pos, values.neg, pos = "first",
-  row.name = NULL)
+add_row_to_ternary_df(
+  df,
+  values.pos,
+  values.neg,
+  pos = "first",
+  row.name = NULL
+)
 }
 \arguments{
 \item{df}{a \code{data.frame} object with values only in the

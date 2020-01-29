@@ -4,8 +4,13 @@
 \alias{make_multiple_density_plot}
 \title{Multiple densities plot}
 \usage{
-make_multiple_density_plot(densities, legend.title, title, x.axis.label,
-  legend.size = 1)
+make_multiple_density_plot(
+  densities,
+  legend.title,
+  title,
+  x.axis.label,
+  legend.size = 1
+)
 }
 \arguments{
 \item{densities}{a list, each element holding the results from executing

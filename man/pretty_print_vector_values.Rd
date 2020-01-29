@@ -4,8 +4,12 @@
 \alias{pretty_print_vector_values}
 \title{Pretty printing of a vector's values}
 \usage{
-pretty_print_vector_values(vec, vector.values.str = "nodes",
-  sep = ", ", with.gt = TRUE)
+pretty_print_vector_values(
+  vec,
+  vector.values.str = "nodes",
+  sep = ", ",
+  with.gt = TRUE
+)
 }
 \arguments{
 \item{vec}{vector}

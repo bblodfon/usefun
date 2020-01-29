@@ -4,8 +4,7 @@
 \alias{get_common_names}
 \title{Get the common names of two vectors}
 \usage{
-get_common_names(vec1, vec2, vector.names.str = "nodes",
-  with.gt = TRUE)
+get_common_names(vec1, vec2, vector.names.str = "nodes", with.gt = TRUE)
 }
 \arguments{
 \item{vec1}{vector with \code{names} attribute}

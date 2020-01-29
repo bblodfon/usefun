@@ -4,8 +4,7 @@
 \alias{get_common_values}
 \title{Get the common values of two vectors}
 \usage{
-get_common_values(vec1, vec2, vector.values.str = "nodes",
-  with.gt = TRUE)
+get_common_values(vec1, vec2, vector.values.str = "nodes", with.gt = TRUE)
 }
 \arguments{
 \item{vec1}{vector}

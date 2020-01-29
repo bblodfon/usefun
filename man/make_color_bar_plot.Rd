@@ -4,8 +4,7 @@
 \alias{make_color_bar_plot}
 \title{Make a color bar plot}
 \usage{
-make_color_bar_plot(color.vector, number.vector, title,
-  x.axis.label = "")
+make_color_bar_plot(color.vector, number.vector, title, x.axis.label = "")
 }
 \arguments{
 \item{color.vector}{vector of color values}

@@ -4,8 +4,11 @@
 \alias{plot_string_to_file}
 \title{Plot string to output format}
 \usage{
-plot_string_to_file(file, file.format = c("pdf", "png", "svg", "tiff"),
-  plot.string)
+plot_string_to_file(
+  file,
+  file.format = c("pdf", "png", "svg", "tiff"),
+  plot.string
+)
 }
 \arguments{
 \item{file}{string. The name of the file, can be a full path.}

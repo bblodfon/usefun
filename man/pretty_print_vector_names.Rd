@@ -4,8 +4,12 @@
 \alias{pretty_print_vector_names}
 \title{Pretty printing of a vector's names attribute}
 \usage{
-pretty_print_vector_names(vec, vector.names.str = "nodes", sep = ", ",
-  with.gt = TRUE)
+pretty_print_vector_names(
+  vec,
+  vector.names.str = "nodes",
+  sep = ", ",
+  with.gt = TRUE
+)
 }
 \arguments{
 \item{vec}{vector}
