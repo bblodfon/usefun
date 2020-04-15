@@ -70,6 +70,7 @@
 #'   filter(dist_from_0_1 == min(dist_from_0_1))
 #'
 #' @importFrom dplyr %>% pull as_tibble
+#' @importFrom utils head tail
 #' @export
 get_roc_stats = function(df, pred_col, obs_col) {
   # checks
