@@ -1,3 +1,7 @@
+# usefun 0.4.4
+
+- add function `get_roc_stats` for calculating ROC statistics
+
 # usefun 0.4.3
 
 - Added function `binarize_to_thres` for converting a matrix to a binary one based on a given threshold
