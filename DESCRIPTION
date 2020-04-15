@@ -1,36 +1,33 @@
 Package: usefun
 Type: Package
 Title: A Collection of Useful Functions by John
-Version: 0.4.3
+Version: 0.4.4
 Authors@R: person("John", "Zobolas", role = c("aut", "cph", "cre"), 
   email = "bblodfon@gmail.com", comment = c(ORCID = "0000-0002-3609-8674"))
 Description: A set of general functions that I have used in various 
   projects and in other R packages. They support some miscellaneous operations 
-  on data frames, matrices and vectors: adding a row on a ternary (3-value)
+  on data frames, matrices and vectors like adding a row on a ternary (3-value)
   data.frame based on positive and negative vector-indicators, rearranging a 
   list of data.frames by rownames, pruning rows or columns of a data.frame 
-  that contain only one specific value given by the user, checking for matrix equality,
+  that contain only one specific value given by the user,
   pruning and reordering a vector according to the common elements between its 
   names and elements of another given vector, finding the non-common elements 
   between two vectors (outer-section), 
   normalization of a vector, matrix or data.frame's numeric values in a specified range, 
-  pretty printing of vector names and values in an R notebook (common names and 
-  values between two vectors also supported), retrieving the parent directory of 
-  any string path, checking whether a numeric value is inside a given interval, 
-  trim the decimal points of a given numeric value, quick saving of data to a file, 
-  making a multiple densities plot and a color bar plot and executing a plot 
-  string expression while generating the result to the specified file format.
+  pretty printing of vector names and values in an Rmarkdown document.
+  Also included is a function that returns the statistics needed for plotting a ROC curve.
 License: MIT + file LICENSE
 URL: https://github.com/bblodfon/usefun
 BugReports: https://github.com/bblodfon/usefun/issues
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 Imports:
     grDevices,
     graphics,
     stats,
-    utils
+    utils,
+    dplyr
 Suggests:
     testthat,
     covr
