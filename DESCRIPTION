@@ -14,7 +14,7 @@ Description: A set of general functions that I have used in various
   names and elements of another given vector, finding the non-common elements 
   between two vectors (outer-section), 
   normalization of a vector, matrix or data.frame's numeric values in a specified range, 
-  pretty printing of vector names and values in an Rmarkdown document.
+  pretty printing of vector names and values in an R Markdown document.
   Also included is a function that returns the statistics needed for plotting a ROC curve.
 License: MIT + file LICENSE
 URL: https://github.com/bblodfon/usefun
