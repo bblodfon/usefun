@@ -1,6 +1,6 @@
 # usefun 0.4.4
 
-- add function `get_roc_stats` for calculating ROC statistics
+- add function `get_roc_stats` for calculating ROC statistics + tests
 
 # usefun 0.4.3
 
