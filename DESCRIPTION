@@ -27,8 +27,8 @@ Imports:
     graphics,
     stats,
     utils,
-    dplyr,
-    readr
+    dplyr
 Suggests:
     testthat,
-    covr
+    covr,
+    readr
