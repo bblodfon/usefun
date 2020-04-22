@@ -1,3 +1,8 @@
+# usefun 0.4.5
+
+- add parameter `direction` to function `get_roc_stats` to indicate the direction/ranking of the prediction values with respect to the positive class labeling
+- add most important functions to `README.md`
+
 # usefun 0.4.4
 
 - add function `get_roc_stats` for calculating ROC statistics + tests
