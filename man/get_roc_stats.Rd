@@ -4,7 +4,7 @@
 \alias{get_roc_stats}
 \title{Generate ROC statistics}
 \usage{
-get_roc_stats(df, pred_col, obs_col)
+get_roc_stats(df, pred_col, label_col, direction = "<")
 }
 \arguments{
 \item{df}{a \code{data.frame} with (at least) two columns. See next two
@@ -13,18 +13,21 @@ one to one).}
 
 \item{pred_col}{string. The name of the column of the \code{df} data.frame
 that has the prediction values. The values can be any numeric, negative,
-positive or zero. What matters is the \strong{ranking} of these values and
-\strong{lower} means closer to a \emph{positive} classification/prediction (the
-class labeled as \emph{1} in the \code{obs_col}). Thus, if for example the
-\code{pred_col} values represent probabilities of positive predictions, i.e.
-a higher probability indicates a positive classification (class labeled
-as \emph{1}), then the complementary (1-\code{pred_col}) values must be provided.}
+positive or zero. What matters is the \strong{ranking} of these values which
+is clarified with the \code{direction} parameter.}
 
-\item{obs_col}{string. The name of the column of the \code{df} data.frame
+\item{label_col}{string. The name of the column of the \code{df} data.frame
 that has the true positive labelings/observed classes for the
-prediction values. This column should have either \emph{1} or \emph{0}
+prediction values. This column must have either \emph{1} or \emph{0}
 elements representing either a \emph{positive} or \emph{negative} classification
-for the corresponding values.}
+label for the corresponding values.}
+
+\item{direction}{string. Can be either \emph{>} or \emph{<} (default value)
+and indicates the direction/ranking of the prediction values with respect to
+the positive class labeling (for a specific threshold). If \strong{smaller}
+prediction values indicate the positive class/label use \strong{<} whereas
+if \strong{larger} prediction values indicate the positive class/label
+(e.g. probability of positive class), use \strong{>}.}
 }
 \value{
 A list with two elements:
@@ -63,7 +66,7 @@ test_file = system.file("extdata", "test_df.tsv", package = "usefun", mustWork =
 test_df = readr::read_tsv(test_file, col_types = "di")
 
 # get ROC stats
-res = get_roc_stats(df = test_df, pred_col = "score", obs_col = "observed")
+res = get_roc_stats(df = test_df, pred_col = "score", label_col = "observed")
 
 # Plot ROC with a legend showing the AUC value
 plot(x = res$roc_stats$FPR, y = res$roc_stats$TPR,

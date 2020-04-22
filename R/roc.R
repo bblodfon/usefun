@@ -8,17 +8,19 @@
 #' one to one).
 #' @param pred_col string. The name of the column of the \code{df} data.frame
 #' that has the prediction values. The values can be any numeric, negative,
-#' positive or zero. What matters is the \strong{ranking} of these values and
-#' \strong{lower} means closer to a \emph{positive} classification/prediction (the
-#' class labeled as \emph{1} in the \code{obs_col}). Thus, if for example the
-#' \code{pred_col} values represent probabilities of positive predictions, i.e.
-#' a higher probability indicates a positive classification (class labeled
-#' as \emph{1}), then the complementary (1-\code{pred_col}) values must be provided.
-#' @param obs_col string. The name of the column of the \code{df} data.frame
+#' positive or zero. What matters is the \strong{ranking} of these values which
+#' is clarified with the \code{direction} parameter.
+#' @param label_col string. The name of the column of the \code{df} data.frame
 #' that has the true positive labelings/observed classes for the
-#' prediction values. This column should have either \emph{1} or \emph{0}
+#' prediction values. This column must have either \emph{1} or \emph{0}
 #' elements representing either a \emph{positive} or \emph{negative} classification
-#' for the corresponding values.
+#' label for the corresponding values.
+#' @param direction string. Can be either \emph{>} or \emph{<} (default value)
+#' and indicates the direction/ranking of the prediction values with respect to
+#' the positive class labeling (for a specific threshold). If \strong{smaller}
+#' prediction values indicate the positive class/label use \strong{<} whereas
+#' if \strong{larger} prediction values indicate the positive class/label
+#' (e.g. probability of positive class), use \strong{>}.
 #'
 #' @return A list with two elements:
 #' \itemize{
@@ -52,7 +54,7 @@
 #' test_df = readr::read_tsv(test_file, col_types = "di")
 #'
 #' # get ROC stats
-#' res = get_roc_stats(df = test_df, pred_col = "score", obs_col = "observed")
+#' res = get_roc_stats(df = test_df, pred_col = "score", label_col = "observed")
 #'
 #' # Plot ROC with a legend showing the AUC value
 #' plot(x = res$roc_stats$FPR, y = res$roc_stats$TPR,
@@ -72,30 +74,32 @@
 #' @importFrom dplyr %>% pull as_tibble
 #' @importFrom utils head tail
 #' @export
-get_roc_stats = function(df, pred_col, obs_col) {
+get_roc_stats = function(df, pred_col, label_col, direction = "<") {
   # checks
-  stopifnot(ncol(df) >= 2, pred_col %in% colnames(df), obs_col %in% obs_col)
+  stopifnot(ncol(df) >= 2, pred_col %in% colnames(df),
+    label_col %in% colnames(df), direction %in% c("<", ">"))
 
   predictions = df %>% pull(pred_col)
-  observed = df %>% pull(obs_col)
+  observed = df %>% pull(label_col)
   stopifnot(all(observed %in% c(0,1)))
-  thresholds = sort(unique(predictions))
+
+  if (direction == "<")
+    thresholds = c(-Inf, sort(unique(predictions)))
+  else
+    thresholds = c(sort(unique(predictions)), Inf)
 
   stats = list()
   index = 1
   for(thres in thresholds) {
-    stats[[index]] = c(thres, get_conf_mat_for_thres(predictions, observed, thres))
+    stats[[index]] = c(thres, get_conf_mat_for_thres(predictions, observed, thres, direction))
     index = index + 1
   }
-
-  # get the (1,1) point in the ROC curve!
-  stats[[index]] = c(thres + 0.001, get_conf_mat_for_thres(predictions, observed, thres + 0.001))
 
   roc_stats = as.data.frame(do.call(rbind, stats))
   colnames(roc_stats)[1] = 'threshold'
 
-  x = roc_stats$FPR
-  y = roc_stats$TPR
+  x = sort(roc_stats$FPR)
+  y = sort(roc_stats$TPR)
   AUC = sum(diff(x) * (head(y,-1)+tail(y,-1)))/2
 
   res_list = list()
@@ -106,8 +110,8 @@ get_roc_stats = function(df, pred_col, obs_col) {
 
 # get the confusion matrix values (TP, FN, TN, FP) + TPR, FPR by comparing the
 # values from the `predictions` vector to the `thres` value, given the true class
-# labelings from `observed`
-get_conf_mat_for_thres = function(predictions, observed, thres) {
+# labelings from `observed` and the `direction` where the positive class values are
+get_conf_mat_for_thres = function(predictions, observed, thres, direction) {
   tp = 0
   fn = 0
   tn = 0
@@ -116,14 +120,26 @@ get_conf_mat_for_thres = function(predictions, observed, thres) {
   index = 1
   for(prediction in predictions) {
     obs = observed[index]
-    if (prediction < thres & obs == 1) {
-      tp = tp + 1
-    } else if (prediction < thres & obs == 0) {
-      fp = fp + 1
-    } else if (prediction >= thres & obs == 1) {
-      fn = fn + 1
-    } else if (prediction >= thres & obs == 0) {
-      tn = tn + 1
+    if (direction == "<") { # positive => smaller
+      if (prediction <= thres & obs == 1) {
+        tp = tp + 1
+      } else if (prediction <= thres & obs == 0) {
+        fp = fp + 1
+      } else if (prediction > thres & obs == 1) {
+        fn = fn + 1
+      } else if (prediction > thres & obs == 0) {
+        tn = tn + 1
+      }
+    } else { # positive => larger
+      if (prediction < thres & obs == 1) {
+        fn = fn + 1
+      } else if (prediction < thres & obs == 0) {
+        tn = tn + 1
+      } else if (prediction >= thres & obs == 1) {
+        tp = tp + 1
+      } else if (prediction >= thres & obs == 0) {
+        fp = fp + 1
+      }
     }
     index = index + 1
   }
