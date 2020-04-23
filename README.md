@@ -17,6 +17,7 @@ Some of the most important are:
 - `outersect`: find the non-common elements between two vectors (outer-section!)
 - `ldf_arrange_by_rownames`: rearrange a list of data frames by rownames
 - `make_multiple_density_plot`: plotting multiple density estimations in one plot
+- `usefun:::colors.100`: a vector of 100 as much as possible *distinct* colors
 
 ## Install
 
