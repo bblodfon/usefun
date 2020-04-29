@@ -32,7 +32,7 @@ if \strong{larger} prediction values indicate the positive class/label
 \value{
 A list with two elements:
 \itemize{
-  \item \code{roc.stats}: a \code{tibble} which includes the \strong{thresholds}
+  \item \code{roc_stats}: a \code{tibble} which includes the \strong{thresholds}
   for the ROC curve and the \strong{confusion matrix stats} for each threshold as
   follows: \emph{TP} (#True Positives), \emph{FN} (#False Negatives),
   \emph{TN} (#True Negatives), \emph{FP} (#False Positives),
