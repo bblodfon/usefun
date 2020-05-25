@@ -81,38 +81,3 @@ make_multiple_density_plot =
     legend("topright", legend = names(densities), fill = color.palette,
            title = legend.title, cex = legend.size)
 }
-
-#' Plot string to output format
-#'
-#' Execute a plot string expression and output the result to the specified
-#' file format.
-#'
-#' @param file string. The name of the file, can be a full path.
-#' @param file.format string. The output file format. Can be one of these:
-#' pdf, svg, png or tiff.
-#' @param plot.string string. The plot string expression.
-#'
-#' @examples
-#'
-#' x = 1:10
-#' y = 1:10
-#' plot_string_to_file(paste0(tempdir(), "/my_file.pdf"), "pdf", "plot(x,y)")
-#'
-#' @importFrom grDevices dev.off pdf png svg tiff
-#' @export
-plot_string_to_file =
-  function(file, file.format = c("pdf", "png", "svg", "tiff"), plot.string) {
-    file.format = match.arg(file.format)
-
-    if (file.format == "pdf")
-      pdf(file)
-    else if (file.format == "svg")
-      svg(file, width = 7, height = 7)
-    else if (file.format == "png")
-      png(file, width = 7, height = 7, units = 'in', res = 300)
-    else if (file.format == "tiff")
-      tiff(file, width = 7, height = 7, units = 'in', res = 300)
-
-    eval(parse(text = plot.string))
-    dev.off()
-}
