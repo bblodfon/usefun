@@ -2,6 +2,7 @@
 #'
 #' Function for saving a \code{vector} with or without its row names to a
 #' specified file.
+#' By default the \emph{tab} is used as a delimiter.
 #'
 #' @param vector vector
 #' @param file string. The name of the file, can be a full path.
@@ -18,6 +19,8 @@ save_vector_to_file = function(vector, file, with.row.names = FALSE) {
 #' Save data frame to a specified file
 #'
 #' Function for saving a \code{data.frame} to a specified file.
+#' Column and row names are written by default and the \emph{tab} is used
+#' as a delimiter.
 #'
 #' @param df data.frame
 #' @param file string. The name of the file, can be a full path.
