@@ -1,3 +1,8 @@
+# usefun 0.4.6
+
+- Add tests for the plot and save functions. Total coverage is now 100%. Yay!
+- Removed obsolete function `plot_string_to_file`
+
 # usefun 0.4.5
 
 - add parameter `direction` to function `get_roc_stats` to indicate the direction/ranking of the prediction values with respect to the positive class labeling
