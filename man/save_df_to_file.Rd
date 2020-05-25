@@ -13,4 +13,6 @@ save_df_to_file(df, file)
 }
 \description{
 Function for saving a \code{data.frame} to a specified file.
+Column and row names are written by default and the \emph{tab} is used
+as a delimiter.
 }

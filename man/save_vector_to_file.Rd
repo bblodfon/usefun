@@ -17,4 +17,5 @@ included in the output file. Default value: FALSE.}
 \description{
 Function for saving a \code{vector} with or without its row names to a
 specified file.
+By default the \emph{tab} is used as a delimiter.
 }
