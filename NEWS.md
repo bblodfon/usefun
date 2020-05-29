@@ -1,3 +1,7 @@
+# usefun 0.4.7
+
+- Removed `grDevices` import since it's not used anymore
+
 # usefun 0.4.6
 
 - Add tests for the plot and save functions. Total coverage is now 100%. Yay!
