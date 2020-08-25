@@ -300,3 +300,19 @@ test_that("it returns proper results", {
   expect_equal(binarize_to_thres(mat, thres = 3.5), expected.mat.4)
   expect_equal(binarize_to_thres(mat, thres = 5), expected.mat.5)
 })
+
+context("Testing 'dec_to_bin'")
+
+test_that("it returns proper results", {
+  expect_error(dec_to_bin(-2))
+  expect_error(dec_to_bin(2^31))
+  expect_error(dec_to_bin(2,-1))
+  expect_error(dec_to_bin(2,33))
+
+  expect_equal(dec_to_bin(0), "00000000000000000000000000000000")
+  expect_equal(dec_to_bin(0,3), "000")
+  expect_equal(dec_to_bin(1,2), "01")
+  expect_equal(dec_to_bin(8,4), "1000")
+  expect_equal(dec_to_bin(8,12), "000000001000")
+  expect_equal(dec_to_bin(2^30), "01000000000000000000000000000000")
+})

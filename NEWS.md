@@ -1,3 +1,7 @@
+# usefun 0.4.8
+
+- add function `dec_to_bin` for converting decimal numbers to binary
+
 # usefun 0.4.7
 
 - Removed `grDevices` import since it's not used anymore

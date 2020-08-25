@@ -12,6 +12,7 @@ Some of the most important are:
 
 - `get_roc_stats`: the ROC statistics the way you want it!
 - `normalize_to_range`: normalize a vector to a specified range
+- `dec_to_bin`: convert a decimal number to its binary representation
 - `get_percentage_of_matches`: find the percentage of common elements between two vectors
 - `pretty_print_*`: pretty printing of vector names and values in an R Markdown document (as quotes)
 - `outersect`: find the non-common elements between two vectors (outer-section!)

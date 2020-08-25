@@ -459,3 +459,37 @@ binarize_to_thres = function(mat, thres) {
     if (x >= thres | x <= -thres) 1 else 0
   })
 }
+
+#' Convert decimal number to its binary representation
+#'
+#' Get the binary representation of any decimal number from 0 to (2^31) - 1.
+#' Doesn't work for larger numbers.
+#'
+#' @param decimal_num decimal number between 0 and (2^31) - 1
+#' @param bits number of bits to keep in the result counting from the right.
+#' \strong{Default value is 32}.
+#'
+#' @return a binary string representation of the given decimal number.
+#'
+#' @examples
+#'
+#' # representing 0
+#' dec_to_bin(0,1)
+#' dec_to_bin(0,10)
+#' dec_to_bin(0,32)
+#' dec_to_bin(0)
+#'
+#' # representing 24
+#' dec_to_bin(24,6)
+#' dec_to_bin(24,21)
+#' dec_to_bin(24)
+#' dec_to_bin(24,3) # note that this will cut the returned result so be careful!
+#'
+#' @export
+dec_to_bin = function(decimal_num, bits = 32) {
+  stopifnot(decimal_num >= 0, decimal_num <= 2^31 - 1)
+  stopifnot(bits > 0, bits <= 32)
+
+  n = paste(sapply(strsplit(paste(rev(intToBits(decimal_num))),""),`[[`,2),collapse="")
+  return(substr(n, nchar(n)-bits+1, nchar(n)))
+}
