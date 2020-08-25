@@ -1,7 +1,7 @@
 Package: usefun
 Type: Package
 Title: A Collection of Useful Functions by John
-Version: 0.4.7
+Version: 0.4.8
 Authors@R: person("John", "Zobolas", role = c("aut", "cph", "cre"), 
   email = "bblodfon@gmail.com", comment = c(ORCID = "0000-0002-3609-8674"))
 Description: A set of general functions that I have used in various 
@@ -21,7 +21,7 @@ URL: https://github.com/bblodfon/usefun
 BugReports: https://github.com/bblodfon/usefun/issues
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Imports:
     graphics,
     stats,
