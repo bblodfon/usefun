@@ -493,3 +493,40 @@ dec_to_bin = function(decimal_num, bits = 32) {
   n = paste(sapply(strsplit(paste(rev(intToBits(decimal_num))),""),`[[`,2),collapse="")
   return(substr(n, nchar(n)-bits+1, nchar(n)))
 }
+
+#' Get partial permutation of a vector
+#'
+#' @param x a vector with at least 2 elements
+#' @param exp_sim a value between 0 and 1 indicating the level of \emph{expected
+#' similarity} between the input and output vector. Default value is \strong{0}
+#' (random permutation).
+#'
+#' @return a partially (random) permutated vector. If \code{exp_sim = 0} then
+#' the result is equal to \code{sample(x)} (a random permutation). If
+#' \code{exp_sim = 1} then the result is always the same as the input vector.
+#' For \code{exp_sim} values between \emph{0} and \emph{1} we randomly sample
+#' a subset of the input vector inversely proportionate to the \code{exp_sim}
+#' value (e.g. \code{exp_sim = 0.8 => 20\%} of the elements) and randomly
+#' permutate these elements only.
+#'
+#' @examples
+#' set.seed(42)
+#' partial_permut(x = LETTERS, exp_sim = 0)
+#' partial_permut(x = LETTERS, exp_sim = 0.5)
+#' partial_permut(x = LETTERS, exp_sim = 0.9)
+#'
+#' @export
+partial_permut = function(x, exp_sim = 0) {
+  stopifnot(length(x) > 1)
+  stopifnot(exp_sim >= 0, exp_sim <= 1)
+
+  indexes = which(x %in% sample(x, size = round((1 - exp_sim) * length(x))))
+  permut_indexes = sample(indexes)
+
+  permut_x = x
+  x_bk = permut_x[indexes]
+  permut_x[indexes] = permut_x[permut_indexes]
+  permut_x[permut_indexes] = x_bk
+
+  return(permut_x)
+}

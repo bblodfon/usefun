@@ -316,3 +316,12 @@ test_that("it returns proper results", {
   expect_equal(dec_to_bin(8,12), "000000001000")
   expect_equal(dec_to_bin(2^30), "01000000000000000000000000000000")
 })
+
+context("Testing 'partial_permut'")
+
+test_that("it returns proper results", {
+  expect_error(partial_permut(LETTERS, exp_sim = -1))
+  expect_error(partial_permut(LETTERS, exp_sim = 21))
+  expect_error(partial_permut(x = c(1)))
+  expect_equal(partial_permut(LETTERS, 1), LETTERS)
+})

@@ -1,6 +1,7 @@
 # usefun 0.4.8
 
 - add function `dec_to_bin` for converting decimal numbers to binary
+- add function `partial_permut` to get partial random permutations of a vector
 
 # usefun 0.4.7
 
