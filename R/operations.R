@@ -521,7 +521,10 @@ partial_permut = function(x, exp_sim = 0) {
   stopifnot(exp_sim >= 0, exp_sim <= 1)
 
   indexes = which(x %in% sample(x, size = round((1 - exp_sim) * length(x))))
-  permut_indexes = sample(indexes)
+  if (length(indexes) == 1)
+    permut_indexes = indexes
+  else
+    permut_indexes = sample(indexes)
 
   permut_x = x
   x_bk = permut_x[indexes]
