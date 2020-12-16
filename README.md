@@ -33,5 +33,5 @@ devtools::install_github("bblodfon/usefun")
 ```
 ## Examples
 
-See examples in the functions documentation and in the respective tests. 
-Also various functions from this package have been used in this [biomarker analysis](https://bblodfon.github.io/gitsbe-model-analysis/atopo/cell-lines-2500/).
+See examples in the functions documentation and in the respective tests.
+For a full biomarker analysis that uses various functions from this package, see [this report](https://druglogics.github.io/gitsbe-model-analysis/atopo/cell-lines-2500/).
