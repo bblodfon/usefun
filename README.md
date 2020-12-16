@@ -1,7 +1,6 @@
 # usefun
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.com/bblodfon/usefun.svg?branch=master)](https://travis-ci.com/bblodfon/usefun)
 [![codecov](https://codecov.io/gh/bblodfon/usefun/branch/master/graph/badge.svg)](https://codecov.io/gh/bblodfon/usefun)
 [![CRAN status](https://www.r-pkg.org/badges/version/usefun)](https://cran.r-project.org/package=usefun)
 [![Downloads](https://cranlogs.r-pkg.org/badges/usefun)](https://cran.r-project.org/package=usefun)
