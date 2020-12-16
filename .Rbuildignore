@@ -5,3 +5,6 @@
 ^codecov\.yml$
 ^CRAN-RELEASE$
 ^cran-comments\.md$
+^img$
+^docs$
+^\.github$
