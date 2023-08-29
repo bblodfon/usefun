@@ -4,6 +4,6 @@
 #'
 #' For a complete list of functions, use \code{library(help = "usefun")}
 #'
-#' @docType package
+#' @aliases usefun-package
 #' @name usefun
 NULL
