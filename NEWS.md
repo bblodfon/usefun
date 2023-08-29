@@ -1,3 +1,7 @@
+# usefun 0.4.9
+
+- Fix CRAN notes
+
 # usefun 0.4.8
 
 - add function `dec_to_bin` for converting decimal numbers to binary
