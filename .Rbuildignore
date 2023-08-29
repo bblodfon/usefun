@@ -8,3 +8,4 @@
 ^img$
 ^docs$
 ^\.github$
+^CRAN-SUBMISSION$
