@@ -10,16 +10,14 @@
 A set of miscellaneous functions that I have used in various projects and in other R packages. 
 Some of the most important are:
 
-- `get_roc_stats`: the ROC statistics the way you want it!
-- `partial_permut`: get a partially-scrambled vector (you choose how much!)
-- `normalize_to_range`: normalize a vector to a specified range
-- `dec_to_bin`: convert a decimal (base-10) number to its binary representation
-- `get_percentage_of_matches`: find the percentage of common elements between two vectors
-- `pretty_print_*`: pretty printing of vector names and values in an R Markdown document (as quotes)
-- `outersect`: find the non-common elements between two vectors (outer-section!)
-- `ldf_arrange_by_rownames`: rearrange a list of data frames by rownames
-- `make_multiple_density_plot`: plotting multiple density estimations in one plot
-- `usefun:::colors.100`: a vector of 100 as much as possible *distinct* colors
+- `get_roc_stats()`: the ROC statistics the way you want it!
+- `pr.test()`: test two PR curves (AUCs) and get a p-value!
+- `partial_permut()`: get a partially-scrambled vector (you choose how much!)
+- `normalize_to_range()`: normalize a vector to a specified range
+- `dec_to_bin()`: convert a decimal (base-10) number to its binary representation
+- `get_percentage_of_matches()`: find the percentage of common elements between two vectors
+- `outersect()`: find the non-common elements between two vectors (outer-section!)
+- `colors.100`: a vector of 100 as much as possible *distinct* colors
 
 ## Install
 
@@ -32,6 +30,7 @@ Development version:
 ```
 devtools::install_github("bblodfon/usefun")
 ```
+
 ## Examples
 
 See examples in the functions documentation and in the respective tests.
