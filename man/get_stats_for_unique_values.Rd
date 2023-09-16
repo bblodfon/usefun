@@ -15,13 +15,13 @@ get_stats_for_unique_values(vec1, vec2)
 A \code{data.frame} consisting of 3 column vectors. The \code{data.frame}
 size is \code{nx3}, where n is the number of unique values of \code{vec1} (rows).
 The columns vectors are:
-  \enumerate{
-    \item the first input vector pruned to its unique values
-    \item a vector with the average values for each unique value of the
- first vector (the matching is done by column name)
-    \item a vector with the standard deviation values for each unique value
-    of the first vector (the matching is done by column name)
-  }
+\enumerate{
+\item the first input vector pruned to its unique values
+\item a vector with the average values for each unique value of the
+first vector (the matching is done by column name)
+\item a vector with the standard deviation values for each unique value
+of the first vector (the matching is done by column name)
+}
 }
 \description{
 Use this function on two vectors with same \code{names} attribute (column

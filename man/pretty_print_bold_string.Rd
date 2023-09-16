@@ -16,7 +16,7 @@ printing in an R notebook. (use with the chuck option \emph{results = 'asis'}). 
 tags for an HTML document. Default value: TRUE.}
 }
 \description{
-Prints a bold string only when `html.output` is enabled. Otherwise, it prints
+Prints a bold string only when \code{html.output} is enabled. Otherwise, it prints
 a normal string. The the ">" sign can be appended if nice output in an R
 notebook is desired.
 }
