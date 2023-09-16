@@ -6,12 +6,13 @@
 #' The PR AUC is calculated using [PRROC::pr.curve()] using the interpolation
 #' method of Davis & Goadrich (2006).
 #'
-#' @param labels `numeric()|character()|factor()`\cr
-#' Vector of responses/labels (only two classes/values allowed: cases vs controls)
+#' @param labels `numeric()`\cr
+#' Vector of responses/labels (only two classes/values allowed: cases/positive
+#' class = 1 and controls/negative class = 0)
 #' @param pred1 `numeric()`\cr
-#' Vector of prediction values. Higher values denote cases class.
+#' Vector of prediction values. Higher values denote positive class.
 #' @param pred2 `numeric()`\cr
-#' Vector of prediction values. Higher values denote cases class.
+#' Vector of prediction values. Higher values denote positive class.
 #' Must have the same length as `pred1`.
 #' @param boot.n `numeric(1)`\cr
 #' Number of bootstrap resamples. Default: 10000
@@ -46,7 +47,7 @@
 pr.test = function(labels, pred1, pred2, boot.n = 10000, boot.stratified = TRUE,
   alternative = "two.sided") {
   match.arg(alternative, c("two.sided", "less", "greater"))
-  stopifnot(length(unique(labels)) == 2) # 2 classes only
+  stopifnot(all(sort(unique(labels)) == c(0,1))) # 2 classes only (0 => neg, 1 => pos)
   stopifnot(length(pred1) == length(pred2))
 
   diffs = sapply(1:boot.n, function(i) {

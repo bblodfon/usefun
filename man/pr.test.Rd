@@ -14,14 +14,15 @@ pr.test(
 )
 }
 \arguments{
-\item{labels}{\code{numeric()|character()|factor()}\cr
-Vector of responses/labels (only two classes/values allowed: cases vs controls)}
+\item{labels}{\code{numeric()}\cr
+Vector of responses/labels (only two classes/values allowed: cases/positive
+class = 1 and controls/negative class = 0)}
 
 \item{pred1}{\code{numeric()}\cr
-Vector of prediction values. Higher values denote cases class.}
+Vector of prediction values. Higher values denote positive class.}
 
 \item{pred2}{\code{numeric()}\cr
-Vector of prediction values. Higher values denote cases class.
+Vector of prediction values. Higher values denote positive class.
 Must have the same length as \code{pred1}.}
 
 \item{boot.n}{\code{numeric(1)}\cr
