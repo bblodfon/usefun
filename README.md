@@ -2,7 +2,7 @@
 
 <!-- badges: start -->
 [![R build status](https://github.com/bblodfon/usefun/workflows/R-CMD-check/badge.svg)](https://github.com/bblodfon/usefun/actions)
-[![codecov](https://codecov.io/gh/bblodfon/usefun/branch/master/graph/badge.svg)](https://app.codecov.io/gh/bblodfon/usefun)
+[![codecov](https://codecov.io/gh/bblodfon/usefun/branch/main/graph/badge.svg)](https://app.codecov.io/gh/bblodfon/usefun)
 [![CRAN status](https://www.r-pkg.org/badges/version/usefun)](https://cran.r-project.org/package=usefun)
 [![Downloads](https://cranlogs.r-pkg.org/badges/usefun)](https://cran.r-project.org/package=usefun)
 <!-- badges: end -->
