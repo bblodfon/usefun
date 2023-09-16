@@ -45,7 +45,7 @@ p-value of the bootstrap-based test.
 \description{
 Test the hypothesis that the true difference in PR AUCs is equal to 0.
 We implement the same bootstrap method based on the idea from \code{\link[pROC:roc.test]{pROC::roc.test()}}.
-The PR AUC is calculated using \code{\link[PRROC:pr.curve]{PRROC::pr.curve()}} using the interpolation
+The PR AUC is calculated using \code{\link[PRROC:pr.curve]{PRROC::pr.curve()}} with the interpolation
 method of Davis & Goadrich (2006).
 }
 \examples{
