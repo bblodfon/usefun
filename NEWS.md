@@ -1,3 +1,7 @@
+# usefun 0.5.0
+
+- Add `pr.test()` to compare two PR curves
+
 # usefun 0.4.9
 
 - Fix CRAN notes
