@@ -29,9 +29,9 @@ Must have the same length as \code{pred1}.}
 Number of bootstrap resamples. Default: 10000}
 
 \item{boot.stratified}{\code{logical(1)}\cr
-Whether the boostrap resampling is stratified (same number of cases/controls
+Whether the bootstrap resampling is stratified (same number of cases/controls
 in each replicate as in the original sample) or not.
-Advised to use epsecially when classes from \code{labels} are imbalanced.
+Advised to use especially when classes from \code{labels} are imbalanced.
 Default: TRUE.}
 
 \item{alternative}{\code{character(1)} \cr

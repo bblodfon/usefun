@@ -17,9 +17,9 @@
 #' @param boot.n `numeric(1)`\cr
 #' Number of bootstrap resamples. Default: 10000
 #' @param boot.stratified `logical(1)`\cr
-#' Whether the boostrap resampling is stratified (same number of cases/controls
+#' Whether the bootstrap resampling is stratified (same number of cases/controls
 #' in each replicate as in the original sample) or not.
-#' Advised to use epsecially when classes from `labels` are imbalanced.
+#' Advised to use especially when classes from `labels` are imbalanced.
 #' Default: TRUE.
 #' @param alternative `character(1)` \cr
 #' Specifies the alternative hypothesis. Either "two.sided", "less" or "greater".
