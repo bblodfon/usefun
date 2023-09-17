@@ -4,7 +4,7 @@
 #' Test the hypothesis that the true difference in PR AUCs is equal to 0.
 #' We implement the same bootstrap method based on the idea from [pROC::roc.test()].
 #' The PR AUC is calculated using [PRROC::pr.curve()] with the interpolation
-#' method of Davis & Goadrich (2006).
+#' method of `r mlr3misc::cite_bib("davis2006")`.
 #'
 #' @param labels `numeric()`\cr
 #' Vector of responses/labels (only two classes/values allowed: cases/positive

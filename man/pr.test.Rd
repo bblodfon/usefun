@@ -46,7 +46,7 @@ p-value of the bootstrap-based test.
 Test the hypothesis that the true difference in PR AUCs is equal to 0.
 We implement the same bootstrap method based on the idea from \code{\link[pROC:roc.test]{pROC::roc.test()}}.
 The PR AUC is calculated using \code{\link[PRROC:pr.curve]{PRROC::pr.curve()}} with the interpolation
-method of Davis & Goadrich (2006).
+method of Davis (2006).
 }
 \examples{
 set.seed(42)
@@ -63,5 +63,5 @@ pr.test(labels, pred1, pred2, boot.n = 1000, boot.stratified = TRUE)
 Davis J, Goadrich M (2006).
 \dQuote{The relationship between precision-recall and ROC curves.}
 \emph{Proceedings of the 23rd International Conference on Machine Learning}, \bold{148}(4), 233--240.
-\url{https://doi.org/10.1145/1143844.1143874}.
+\doi{10.1145/1143844.1143874}.
 }
