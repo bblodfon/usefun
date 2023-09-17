@@ -8,6 +8,6 @@ bibentries = c(
     volume            = 148,
     number            = 4,
     pages             = "233--240",
-    url               = "https://doi.org/10.1145/1143844.1143874"
+    doi               = "10.1145/1143844.1143874"
   )
 )
