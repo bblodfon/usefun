@@ -31,8 +31,8 @@ Number of bootstrap resamples. Default: 10000}
 \item{boot.stratified}{\code{logical(1)}\cr
 Whether the bootstrap resampling is stratified (same number of cases/controls
 in each replicate as in the original sample) or not.
-Advised to use especially when classes from \code{labels} are imbalanced.
-Default: TRUE.}
+It is advised to use stratified resampling when classes from \code{labels} are
+imbalanced. Default: TRUE.}
 
 \item{alternative}{\code{character(1)} \cr
 Specifies the alternative hypothesis. Either "two.sided", "less" or "greater".
