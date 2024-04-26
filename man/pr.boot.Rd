@@ -31,7 +31,7 @@ It is advised to use stratified resampling when classes from \code{labels} are
 imbalanced. Default: TRUE.}
 
 \item{alpha}{\code{numeric(1)}\cr
-Confidence level for bootstrap percentile intervals (between 0 and 1).
+Confidence level for bootstrap percentile interval (between 0 and 1).
 Default is 0.1, corresponding to 90\% confidence intervals.}
 
 \item{...}{\cr
@@ -44,8 +44,8 @@ A tibble with columns:
 \itemize{
 \item \code{recall}: recall of original data
 \item \code{precision}: precision of original data
-\item \code{low_precision}: low quantile value of the bootstrap confidence interval
-\item \code{high_precision}: high quantile value of the bootstrap confidence interval
+\item \code{low_precision}: low value of the bootstrap confidence interval
+\item \code{high_precision}: high value of the bootstrap confidence interval
 }
 }
 \description{
@@ -61,7 +61,7 @@ labels = sample(c(0,1), 100, replace = TRUE, prob = c(0.8,0.2))
 preds = rnorm(100)
 
 # get CIs for PR curve
-pr_tbl = pr.boot(labels, preds, boot.n = 100, x_bins = 30)
+pr_tbl = pr.boot(labels, preds, boot.n = 100, x_bins = 30) # default x_bin is 1000
 pr_tbl
 
 # draw PR curve + add the bootstrap percentile confidence bands

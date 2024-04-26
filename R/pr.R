@@ -137,7 +137,7 @@ pr.test = function(labels, pred1, pred2, boot.n = 10000, boot.stratified = TRUE,
 #' It is advised to use stratified resampling when classes from `labels` are
 #' imbalanced. Default: TRUE.
 #' @param alpha `numeric(1)`\cr
-#' Confidence level for bootstrap percentile intervals (between 0 and 1).
+#' Confidence level for bootstrap percentile interval (between 0 and 1).
 #' Default is 0.1, corresponding to 90% confidence intervals.
 #' @param ... \cr
 #' Other parameters to pass on to [precrec::evalmod], except `mode`
@@ -146,8 +146,8 @@ pr.test = function(labels, pred1, pred2, boot.n = 10000, boot.stratified = TRUE,
 #' @return A tibble with columns:
 #' - `recall`: recall of original data
 #' - `precision`: precision of original data
-#' - `low_precision`: low quantile value of the bootstrap confidence interval
-#' - `high_precision`: high quantile value of the bootstrap confidence interval
+#' - `low_precision`: low value of the bootstrap confidence interval
+#' - `high_precision`: high value of the bootstrap confidence interval
 #'
 #' @references
 #' `r mlr3misc::format_bib("saito2016")`
@@ -160,7 +160,7 @@ pr.test = function(labels, pred1, pred2, boot.n = 10000, boot.stratified = TRUE,
 #' preds = rnorm(100)
 #'
 #' # get CIs for PR curve
-#' pr_tbl = pr.boot(labels, preds, boot.n = 100, x_bins = 30)
+#' pr_tbl = pr.boot(labels, preds, boot.n = 100, x_bins = 30) # default x_bin is 1000
 #' pr_tbl
 #'
 #' # draw PR curve + add the bootstrap percentile confidence bands
