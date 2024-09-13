@@ -50,7 +50,7 @@ A tibble with columns:
 }
 \description{
 This functions calculates bootstrap percentile CIs for PR curves
-using \link{precrec}.
+using \CRANpkg{precrec}.
 These can then be used in a plotting function, see example.
 }
 \examples{

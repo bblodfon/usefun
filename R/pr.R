@@ -121,7 +121,7 @@ pr.test = function(labels, pred1, pred2, boot.n = 10000, boot.stratified = TRUE,
 #' @title Bootstrap Confidence Intervals for Precision-Recall Curves
 #' @description
 #' This functions calculates bootstrap percentile CIs for PR curves
-#' using [precrec].
+#' using \CRANpkg{precrec}.
 #' These can then be used in a plotting function, see example.
 #'
 #' @param labels `numeric()`\cr
