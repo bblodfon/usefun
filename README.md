@@ -10,6 +10,7 @@
 A set of miscellaneous functions that I have used in various projects and in other R packages. 
 Some of the most important are:
 
+- `powerset_icounts()`: find common (patient) ids in incomplete multi-omic datasets
 - `get_roc_stats()`: the ROC statistics the way you want it!
 - `pr.test()`: compare two PR curves (AUCs) and get a p-value!
 - `pr.boot()`: bootstrap CIs for PR curve

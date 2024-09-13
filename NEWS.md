@@ -1,3 +1,7 @@
+# usefun 0.5.2
+
+- Add `powerset_icounts()` function.
+
 # usefun 0.5.1
 
 - Add `pr.boot()` for adding bootstrap CIs to a PR curve
