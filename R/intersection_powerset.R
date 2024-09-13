@@ -26,7 +26,6 @@
 #'   filter(num_subsets >= 2, count > 2) |>
 #'   arrange(desc(count), desc(num_subsets))
 #'
-#' @importFrom combinat combn
 #' @export
 powerset_icounts = function(ids) {
   checkmate::assert_list(ids, names = "unique", min.len = 1, null.ok = FALSE, types = "numeric")
