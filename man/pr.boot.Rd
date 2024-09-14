@@ -14,28 +14,27 @@ pr.boot(
 )
 }
 \arguments{
-\item{labels}{\code{numeric()}\cr
+\item{labels}{(\code{numeric()})\cr
 Vector of responses/labels (only two classes/values allowed: cases/positive
 class = 1 and controls/negative class = 0)}
 
-\item{preds}{\code{numeric()}\cr
+\item{preds}{(\code{numeric()})\cr
 Vector of prediction values. Higher values denote positive class.}
 
-\item{boot.n}{\code{numeric(1)}\cr
+\item{boot.n}{(\code{numeric(1)})\cr
 Number of bootstrap resamples. Default: 10000}
 
-\item{boot.stratified}{\code{logical(1)}\cr
+\item{boot.stratified}{(\code{logical(1)})\cr
 Whether the bootstrap resampling is stratified (same number of cases/controls
 in each replicate as in the original sample) or not.
 It is advised to use stratified resampling when classes from \code{labels} are
 imbalanced. Default: TRUE.}
 
-\item{alpha}{\code{numeric(1)}\cr
+\item{alpha}{(\code{numeric(1)})\cr
 Confidence level for bootstrap percentile interval (between 0 and 1).
 Default is 0.1, corresponding to 90\% confidence intervals.}
 
-\item{...}{\cr
-Other parameters to pass on to \link[precrec:evalmod]{precrec::evalmod}, except \code{mode}
+\item{...}{Other parameters to pass on to \link[precrec:evalmod]{precrec::evalmod}, except \code{mode}
 (set to \code{rocpr}) and \code{raw_curves} (set to \code{TRUE}). For example \code{x_bins}
 indicates the minimum number of recall points on the x-axis.}
 }

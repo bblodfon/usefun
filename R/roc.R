@@ -23,19 +23,12 @@
 #' (e.g. probability of positive class), use \strong{>}.
 #'
 #' @return A list with two elements:
-#' \itemize{
-#'   \item \code{roc_stats}: a \code{tibble} which includes the \strong{thresholds}
-#'   for the ROC curve and the \strong{confusion matrix stats} for each threshold as
-#'   follows: \emph{TP} (#True Positives), \emph{FN} (#False Negatives),
-#'   \emph{TN} (#True Negatives), \emph{FP} (#False Positives),
-#'   \emph{FPR} (False Positive Rate - the x-axis values for the ROC curve) and
-#'   \emph{TPR} (True Positive Rate - the y-axis values for the ROC curve).
+#'   - \code{roc_stats}: a \code{tibble} which includes the \strong{thresholds} for the ROC curve and the \strong{confusion matrix stats} for each threshold as follows: \emph{TP} (#True Positives), \emph{FN} (#False Negatives), \emph{TN} (#True Negatives), \emph{FP} (#False Positives), \emph{FPR} (False Positive Rate - the x-axis values for the ROC curve) and \emph{TPR} (True Positive Rate - the y-axis values for the ROC curve).
 #'   Also included are the \emph{dist-from-chance} (the vertical distance of
 #'   the corresponding (FPR,TPR) point to the chance line or positive diagonal)
 #'   and the \emph{dist-from-0-1} (the euclidean distance of the corresponding
 #'   (FPR,TPR) point from (0,1)).
-#'   \item \code{AUC}: a number representing the Area Under the (ROC) Curve.
-#' }
+#'   - \code{AUC}: a number representing the Area Under the (ROC) Curve.
 #'
 #' The returned results provide an easy way to compute two optimal \emph{cutpoints}
 #' (thresholds) that dichotomize the predictions to positive and negative.

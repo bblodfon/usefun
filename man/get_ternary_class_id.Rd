@@ -14,9 +14,9 @@ get_ternary_class_id(value, threshold)
 \value{
 an integer. There are 3 cases:
 \itemize{
-\item 1: when \eqn{value > threshold}
-\item -1: when \eqn{value < -threshold}
-\item 0: otherwise
+\item \eqn{1}: when \eqn{value > threshold}
+\item \eqn{-1}: when \eqn{value < -threshold}
+\item \eqn{0}: otherwise
 }
 }
 \description{

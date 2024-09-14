@@ -14,27 +14,27 @@ pr.test(
 )
 }
 \arguments{
-\item{labels}{\code{numeric()}\cr
+\item{labels}{(\code{numeric()})\cr
 Vector of responses/labels (only two classes/values allowed: cases/positive
 class = 1 and controls/negative class = 0)}
 
-\item{pred1}{\code{numeric()}\cr
+\item{pred1}{(\code{numeric()})\cr
 Vector of prediction values. Higher values denote positive class.}
 
-\item{pred2}{\code{numeric()}\cr
+\item{pred2}{(\code{numeric()})\cr
 Vector of prediction values. Higher values denote positive class.
 Must have the same length as \code{pred1}.}
 
-\item{boot.n}{\code{numeric(1)}\cr
+\item{boot.n}{(\code{numeric(1)})\cr
 Number of bootstrap resamples. Default: 10000}
 
-\item{boot.stratified}{\code{logical(1)}\cr
+\item{boot.stratified}{(\code{logical(1)})\cr
 Whether the bootstrap resampling is stratified (same number of cases/controls
 in each replicate as in the original sample) or not.
 It is advised to use stratified resampling when classes from \code{labels} are
 imbalanced. Default: TRUE.}
 
-\item{alternative}{\code{character(1)} \cr
+\item{alternative}{(\code{character(1)})\cr
 Specifies the alternative hypothesis. Either "two.sided", "less" or "greater".
 Default: "two.sided".}
 }

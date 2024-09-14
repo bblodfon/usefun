@@ -6,22 +6,22 @@
 #' The PR AUC is calculated using [PRROC::pr.curve()] with the interpolation
 #' method of `r mlr3misc::cite_bib("davis2006")`.
 #'
-#' @param labels `numeric()`\cr
+#' @param labels (`numeric()`)\cr
 #' Vector of responses/labels (only two classes/values allowed: cases/positive
 #' class = 1 and controls/negative class = 0)
-#' @param pred1 `numeric()`\cr
+#' @param pred1 (`numeric()`)\cr
 #' Vector of prediction values. Higher values denote positive class.
-#' @param pred2 `numeric()`\cr
+#' @param pred2 (`numeric()`)\cr
 #' Vector of prediction values. Higher values denote positive class.
 #' Must have the same length as `pred1`.
-#' @param boot.n `numeric(1)`\cr
+#' @param boot.n (`numeric(1)`)\cr
 #' Number of bootstrap resamples. Default: 10000
-#' @param boot.stratified `logical(1)`\cr
+#' @param boot.stratified (`logical(1)`)\cr
 #' Whether the bootstrap resampling is stratified (same number of cases/controls
 #' in each replicate as in the original sample) or not.
 #' It is advised to use stratified resampling when classes from `labels` are
 #' imbalanced. Default: TRUE.
-#' @param alternative `character(1)` \cr
+#' @param alternative (`character(1)`)\cr
 #' Specifies the alternative hypothesis. Either "two.sided", "less" or "greater".
 #' Default: "two.sided".
 #'
@@ -124,22 +124,22 @@ pr.test = function(labels, pred1, pred2, boot.n = 10000, boot.stratified = TRUE,
 #' using \CRANpkg{precrec}.
 #' These can then be used in a plotting function, see example.
 #'
-#' @param labels `numeric()`\cr
+#' @param labels (`numeric()`)\cr
 #' Vector of responses/labels (only two classes/values allowed: cases/positive
 #' class = 1 and controls/negative class = 0)
-#' @param preds `numeric()`\cr
+#' @param preds (`numeric()`)\cr
 #' Vector of prediction values. Higher values denote positive class.
-#' @param boot.n `numeric(1)`\cr
+#' @param boot.n (`numeric(1)`)\cr
 #' Number of bootstrap resamples. Default: 10000
-#' @param boot.stratified `logical(1)`\cr
+#' @param boot.stratified (`logical(1)`)\cr
 #' Whether the bootstrap resampling is stratified (same number of cases/controls
 #' in each replicate as in the original sample) or not.
 #' It is advised to use stratified resampling when classes from `labels` are
 #' imbalanced. Default: TRUE.
-#' @param alpha `numeric(1)`\cr
+#' @param alpha (`numeric(1)`)\cr
 #' Confidence level for bootstrap percentile interval (between 0 and 1).
 #' Default is 0.1, corresponding to 90% confidence intervals.
-#' @param ... \cr
+#' @param ...
 #' Other parameters to pass on to [precrec::evalmod], except `mode`
 #' (set to `rocpr`) and `raw_curves` (set to `TRUE`). For example `x_bins`
 #' indicates the minimum number of recall points on the x-axis.

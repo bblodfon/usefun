@@ -302,11 +302,9 @@ prune_and_reorder_vector = function(vec, filter.vec) {
 #' @param threshold numeric
 #'
 #' @return an integer. There are 3 cases:
-#'   \itemize{
-#'     \item 1: when \eqn{value > threshold}
-#'     \item -1: when \eqn{value < -threshold}
-#'     \item 0: otherwise
-#'   }
+#'  - \eqn{1}: when \eqn{value > threshold}
+#'  - \eqn{-1}: when \eqn{value < -threshold}
+#'  - \eqn{0}: otherwise
 #'
 #' @export
 get_ternary_class_id = function(value, threshold) {
